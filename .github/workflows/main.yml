@@ -1,0 +1,30 @@
+name: Atualizar Painel PH
+
+on:
+  workflow_dispatch: # Isso cria o botão manual que você pediu
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v3
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar Requests
+        run: pip install requests
+
+      - name: Rodar Buscador
+        run: python buscador.py
+
+      - name: Salvar Mudanças
+        run: |
+          git config --global user.name "PH-Programador"
+          git config --global user.email "ph@dev.com"
+          git add index.html
+          git commit -m "Atualizando IPs de Canais" || exit 0
+          git push
