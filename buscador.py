@@ -1,3 +1,15 @@
+# ... (mantenha o resto do código igual)
+
+if __name__ == "__main__":
+    lista_canais = buscar_links()
+    if not lista_canais:
+        # Se a API falhar, cria um arquivo básico para não dar erro no Git
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write("<html><body><h1>Nenhum canal encontrado no momento.</h1></body></html>")
+        print("Aviso: Nenhun canal encontrado, gerando HTML vazio.")
+    else:
+        gerar_painel(lista_canais)
+        print(f"Sucesso! {len(lista_canais)} canais processados.")
 import requests
 from datetime import datetime
 
