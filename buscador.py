@@ -2,83 +2,90 @@ import requests
 from datetime import datetime
 
 def buscar_links():
-    # Usando a base de dados bruta para ter mais chances de achar
-    url_api = "https://iptv-org.github.io/api/streams.json"
-    try:
-        print("Iniciando varredura de sinais...")
-        response = requests.get(url_api, timeout=20)
-        dados = response.json()
-        
-        canais_br = []
-        for c in dados:
-            channel_id = str(c.get("channel", "")).lower()
-            # Busca ampliada: IDs que contenham .br ou nomes que indiquem Brasil
-            if ".br" in channel_id or channel_id.endswith("-br"):
-                if c.get("url"):
-                    canais_br.append(c)
-        
-        return canais_br
-    except Exception as e:
-        print(f"Erro na conexão: {e}")
-        return []
+    # Lista de APIs e Repositórios confiáveis
+    fontes = [
+        "https://iptv-org.github.io/api/streams.json",
+        "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/br.m3u"
+    ]
+    
+    canais_encontrados = []
+    print("Iniciando varredura em múltiplas fontes...")
+
+    for url in fontes:
+        try:
+            response = requests.get(url, timeout=15)
+            if url.endswith(".json"):
+                dados = response.json()
+                # Filtro ampliado: busca 'br' no canal ou no país
+                for c in dados:
+                    if c.get("url") and ("-br" in str(c.get("channel", "")) or c.get("country") == "BR"):
+                        canais_encontrados.append({"nome": str(c.get("channel")).upper(), "url": c.get("url")})
+            
+            elif url.endswith(".m3u"):
+                # Se for lista M3U, fazemos um parsing manual simples
+                linhas = response.text.split("\n")
+                for i in range(len(linhas)):
+                    if "#EXTINF" in linhas[i] and "," in linhas[i]:
+                        nome = linhas[i].split(",")[-1].strip()
+                        proxima_linha = linhas[i+1].strip()
+                        if proxima_linha.startswith("http"):
+                            canais_encontrados.append({"nome": nome, "url": proxima_linha})
+        except Exception as e:
+            print(f"Erro na fonte {url}: {e}")
+
+    # Remove duplicados
+    lista_limpa = {c['url']: c for c in canais_encontrados}.values()
+    return list(lista_limpa)
 
 def gerar_painel(canais):
     agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    html_inicio = f"""
+    html_template = f"""
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>PH - TV Finder v2.0</title>
+        <title>PH-TV MUNIÇÃO V2</title>
         <style>
-            body {{ background: #0f0f0f; color: #00ff88; font-family: 'Courier New', monospace; padding: 20px; }}
-            .card {{ background: #1a1a1a; border: 1px solid #333; padding: 15px; margin-bottom: 10px; border-radius: 8px; }}
-            input {{ width: 70%; background: #000; color: #fff; border: 1px solid #00ff88; padding: 5px; margin: 10px 0; }}
-            button {{ background: #00ff88; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; }}
-            h1 {{ border-bottom: 2px solid #00ff88; display: inline-block; }}
+            body {{ background: #0f0f0f; color: #00ff41; font-family: 'Courier New', monospace; padding: 20px; }}
+            .card {{ background: #1a1a1a; border: 1px solid #00ff41; margin: 10px 0; padding: 15px; border-radius: 5px; }}
+            input {{ width: 70%; background: #000; color: #00ff41; border: 1px solid #00ff41; padding: 5px; }}
+            button {{ background: #00ff41; color: #000; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; }}
+            h1 {{ border-bottom: 2px solid #00ff41; padding-bottom: 10px; }}
         </style>
     </head>
     <body>
-        <h1>🔍 PH-TV SEARCH ENGINE</h1>
-        <p>Última varredura: {agora}</p>
+        <h1>💻 PH-PROGRAMADOR | SCANNER DE IPS TV</h1>
+        <p>Sinais encontrados: {len(canais)} | Atualizado: {agora}</p>
         <div id="lista">
     """
     
-    conteudo = ""
     for c in canais:
-        nome = c['channel'].split('.')[0].replace("-", " ").upper()
-        url = c['url']
-        conteudo += f"""
-        <div class="card">
-            <strong>CANAL: {nome}</strong><br>
-            <input type="text" value="{url}" id="url-{nome}" readonly>
-            <button onclick="copyToClipboard('url-{nome}')">COPIAR IP</button>
-        </div>
+        nome_limpo = c['nome'].replace("-", " ")
+        html_template += f"""
+            <div class="card">
+                <strong>{nome_limpo}</strong><br><br>
+                <input type="text" value="{c['url']}" id="url-{nome_limpo}">
+                <button onclick="copy('{nome_limpo}')">COPIAR IP</button>
+            </div>
         """
-    
-    html_fim = """
+        
+    html_template += """
         </div>
         <script>
-            function copyToClipboard(id) {
-                var copyText = document.getElementById(id);
-                copyText.select();
+            function copy(id) {
+                var btn = document.getElementById('url-' + id);
+                btn.select();
                 document.execCommand("copy");
-                alert("URL copiada!");
+                alert("IP Copiado para o PHflix!");
             }
         </script>
     </body>
     </html>
     """
-    
     with open("index.html", "w", encoding="utf-8") as f:
-        f.write(html_inicio + conteudo + html_fim)
+        f.write(html_template)
 
 if __name__ == "__main__":
     lista = buscar_links()
-    if lista:
-        gerar_painel(lista)
-        print(f"Finalizado: {len(lista)} canais encontrados.")
-    else:
-        # Se não achar nada, vamos gerar um aviso mas manter a estrutura
-        with open("index.html", "w", encoding="utf-8") as f:
-            f.write("<html><body style='background:#000;color:#fff;'><h1>Nenhum sinal captado. Tente o 'Run Workflow' novamente.</h1></body></html>")
+    gerar_painel(lista)
+    print(f"Processo finalizado. {len(lista)} canais no painel.")
