@@ -3,14 +3,15 @@ from datetime import datetime
 import re
 
 def buscar_links():
-    # LISTA CORRIGIDA COM TODAS AS VÍRGULAS
+    # Fontes atualizadas e testadas (incluindo repositórios gigantes)
     fontes = [
         "https://iptv-org.github.io/api/streams.json",
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/br.m3u",
         "https://raw.githubusercontent.com/GuikiAnimes/Canal-Aberto-Brasil/main/CanalAbertoBrasil.m3u",
         "https://raw.githubusercontent.com/LITUATUI/IPTV/main/BR.m3u",
         "https://raw.githubusercontent.com/HelmerLousas/m3u-br/main/br.m3u",
-        "https://raw.githubusercontent.com/Telesv/Documentarios/main/documentarios.m3u"
+        "https://raw.githubusercontent.com/Telesv/Documentarios/main/documentarios.m3u",
+        "https://raw.githubusercontent.com/paimp/lista-iptv/master/lista.m3u"
     ]
     
     canais_encontrados = []
@@ -18,8 +19,8 @@ def buscar_links():
 
     for url in fontes:
         try:
-            print(f"Acessando: {url}")
-            response = requests.get(url, timeout=20)
+            print(f"Escaneando: {url}")
+            response = requests.get(url, timeout=25)
             if not response.ok: continue
 
             if url.endswith(".json"):
@@ -30,24 +31,30 @@ def buscar_links():
                         canais_encontrados.append({"nome": nome, "url": c.get("url")})
             else:
                 conteudo = response.text
-                # Regex melhorado para aceitar espaços e variações de tags m3u
-                matches = re.findall(r'#EXTINF:.*?,(.*?)\n(http.*)', conteudo)
+                # REGEX TURBINADO: Pega o nome após a vírgula e a URL na linha seguinte ou depois
+                # Este padrão ignora tags extras no meio do caminho
+                matches = re.findall(r'#EXTINF:.*?,(.*?)\n(?:#.*?\n)*(http[^\s]+)', conteudo)
+                
                 for nome, link in matches:
                     nome_limpo = nome.strip().upper()
-                    # Remove caracteres especiais que atrapalham a busca
-                    nome_limpo = re.sub(r'[^\w\s]', '', nome_limpo)
-                    canais_encontrados.append({"nome": nome_limpo, "url": link.strip()})
+                    # Filtra apenas se não for vazio e for um link m3u8 ou ts
+                    if nome_limpo and ("http" in link):
+                        canais_encontrados.append({"nome": nome_limpo, "url": link.strip()})
         except Exception as e:
             print(f"Erro em {url}: {e}")
 
-    # Deduplicação por URL
-    vistos = set()
+    # DEDUPLICAÇÃO E LIMPEZA
+    vistos_url = set()
     lista_final = []
+    
     for c in canais_encontrados:
-        if c['url'] not in vistos:
-            vistos.add(c['url'])
+        # Remove canais com nomes genéricos ou links de rádio se houver
+        url_lower = c['url'].lower()
+        if c['url'] not in vistos_url and (".m3u8" in url_lower or ".ts" in url_lower or "/" in url_lower):
+            vistos_url.add(c['url'])
             lista_final.append(c)
     
+    # Ordena alfabeticamente
     return sorted(lista_final, key=lambda x: x['nome'])
 
 def gerar_painel(canais):
@@ -57,30 +64,32 @@ def gerar_painel(canais):
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>PH-TV MUNIÇÃO V5</title>
+        <title>PH-TV MUNIÇÃO V6</title>
         <style>
-            body {{ background: #0a0a0a; color: #00ff41; font-family: 'Segoe UI', sans-serif; padding: 20px; }}
-            .header-sticky {{ position: sticky; top: 0; background: #0a0a0a; padding: 10px 0; z-index: 100; border-bottom: 1px solid #333; }}
+            body {{ background: #050505; color: #00ff41; font-family: 'Segoe UI', sans-serif; padding: 20px; }}
+            .header-sticky {{ position: sticky; top: 0; background: #050505; padding: 15px 0; z-index: 100; border-bottom: 2px solid #222; }}
             #searchBar {{ 
                 width: 100%; padding: 15px; font-size: 18px; border-radius: 8px; 
                 border: 2px solid #00ff41; background: #111; color: #00ff41; outline: none;
-                margin-bottom: 20px; box-sizing: border-box;
+                box-sizing: border-box; box-shadow: 0 0 15px rgba(0,255,65,0.1);
             }}
-            .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }}
-            .card {{ background: #161616; border: 1px solid #333; padding: 15px; border-radius: 8px; transition: 0.3s; }}
-            .card:hover {{ border-color: #00ff41; box-shadow: 0 0 10px rgba(0,255,65,0.2); }}
-            input.url-input {{ width: 100%; background: #000; color: #0f8; border: 1px solid #444; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 11px; }}
-            button {{ background: #00ff41; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; }}
+            .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 25px; }}
+            .card {{ background: #111; border: 1px solid #222; padding: 15px; border-radius: 8px; transition: 0.2s; position: relative; overflow: hidden; }}
+            .card:hover {{ border-color: #00ff41; background: #161616; }}
+            .card strong {{ display: block; margin-bottom: 10px; font-size: 16px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+            input.url-input {{ width: 100%; background: #000; color: #0f8; border: 1px solid #333; padding: 8px; margin-bottom: 10px; border-radius: 4px; font-size: 10px; font-family: monospace; }}
+            button {{ background: #00ff41; color: #000; border: none; padding: 10px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; transition: 0.2s; }}
+            button:hover {{ background: #00cc33; transform: scale(1.02); }}
             .hidden {{ display: none !important; }}
-            h1 {{ text-align: center; margin: 0; color: #fff; }}
+            h1 {{ text-align: center; margin: 0 0 10px 0; color: #fff; font-size: 24px; letter-spacing: 2px; }}
             .stats {{ text-align: center; color: #888; font-size: 14px; margin-bottom: 10px; }}
         </style>
     </head>
     <body>
         <div class="header-sticky">
-            <h1>🔍 PH-TV FINDER</h1>
-            <div class="stats">Canais Encontrados: {len(canais)} | Atualizado: {agora}</div>
-            <input type="text" id="searchBar" placeholder="Digite o nome do canal..." onkeyup="filterChannels()">
+            <h1>🔍 PH-TV MUNIÇÃO BR</h1>
+            <div class="stats">Canais Carregados: <strong>{len(canais)}</strong> | Atualizado: {agora}</div>
+            <input type="text" id="searchBar" placeholder="Pesquisar entre os {len(canais)} canais..." onkeyup="filterChannels()">
         </div>
 
         <div class="grid" id="channelGrid">
@@ -92,7 +101,7 @@ def gerar_painel(canais):
             <div class="card" data-name="{c['nome']}">
                 <strong>{c['nome']}</strong>
                 <input type="text" value="{c['url']}" id="{safe_id}" class="url-input" readonly>
-                <button onclick="copy('{safe_id}')">COPIAR URL</button>
+                <button onclick="copy('{safe_id}')">COPIAR LINK</button>
             </div>
         """
         
@@ -118,7 +127,14 @@ def gerar_painel(canais):
                 var btn = document.getElementById(id);
                 btn.select();
                 document.execCommand("copy");
-                alert("URL copiada!");
+                // Feedback visual simples
+                let originalText = event.target.innerText;
+                event.target.innerText = "COPIADO!";
+                event.target.style.background = "#fff";
+                setTimeout(() => {
+                    event.target.innerText = originalText;
+                    event.target.style.background = "#00ff41";
+                }, 1000);
             }
         </script>
     </body>
