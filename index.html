@@ -3,1299 +3,1302 @@
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>PH-TV MUNIÇÃO V2</title>
+        <title>PH-TV MUNIÇÃO V3</title>
         <style>
-            body { background: #0f0f0f; color: #00ff41; font-family: 'Courier New', monospace; padding: 20px; }
-            .card { background: #1a1a1a; border: 1px solid #00ff41; margin: 10px 0; padding: 15px; border-radius: 5px; }
-            input { width: 70%; background: #000; color: #00ff41; border: 1px solid #00ff41; padding: 5px; }
-            button { background: #00ff41; color: #000; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; }
-            h1 { border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+            body { background: #0a0a0a; color: #00ff41; font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+            .card { background: #161616; border: 1px solid #333; padding: 15px; border-radius: 8px; transition: 0.3s; }
+            .card:hover { border-color: #00ff41; box-shadow: 0 0 10px #00ff4133; }
+            input { width: 100%; background: #000; color: #0f8; border: 1px solid #444; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 12px; }
+            button { background: #00ff41; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; }
+            h1 { color: #fff; text-align: center; margin-bottom: 5px; }
+            .stats { text-align: center; color: #888; margin-bottom: 30px; }
         </style>
     </head>
     <body>
-        <h1>💻 PH-PROGRAMADOR | SCANNER DE IPS TV</h1>
-        <p>Sinais encontrados: 212 | Atualizado: 08/05/2026 02:10:11</p>
-        <div id="lista">
+        <h1>🔍 PAINEL DE MUNIÇÃO PH-TV</h1>
+        <div class="stats">Canais Online: 212 | Atualizado: 08/05/2026 02:26:35</div>
+        <div class="grid">
     
             <div class="card">
-                <strong>1001 Noites (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8" id="url-1001 Noites (720p) [Not 24/7]">
-                <button onclick="copy('1001 Noites (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>1001 NOITES (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8" id="url-9048280514104813667" readonly>
+                <button onclick="copy('url-9048280514104813667')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Adesso TV (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8" id="url-Adesso TV (720p)">
-                <button onclick="copy('Adesso TV (720p)')">COPIAR IP</button>
+                <strong>ADESSO TV (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8" id="url--6156771490621551546" readonly>
+                <button onclick="copy('url--6156771490621551546')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>AgroBrasil TV (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url-AgroBrasil TV (720p) [Not 24/7]">
-                <button onclick="copy('AgroBrasil TV (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>AGROBRASIL TV (720P) [NOT 24/7]</strong>
+                <input type="text" value="http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url-3283018588564397186" readonly>
+                <button onclick="copy('url-3283018588564397186')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>AgroBrasil TV (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url-AgroBrasil TV (720p) [Not 24/7]">
-                <button onclick="copy('AgroBrasil TV (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>AGROBRASIL TV (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url--3891108816079798575" readonly>
+                <button onclick="copy('url--3891108816079798575')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Alpha Channel (720p)</strong><br><br>
-                <input type="text" value="https://5b01a3d32b65c.streamlock.net:1936/tvalpha/tvalpha/playlist.m3u8" id="url-Alpha Channel (720p)">
-                <button onclick="copy('Alpha Channel (720p)')">COPIAR IP</button>
+                <strong>ALPHA CHANNEL (720P)</strong>
+                <input type="text" value="https://5b01a3d32b65c.streamlock.net:1936/tvalpha/tvalpha/playlist.m3u8" id="url--8728335413964349032" readonly>
+                <button onclick="copy('url--8728335413964349032')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Amazon Sat (1080p)</strong><br><br>
-                <input type="text" value="https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8" id="url-Amazon Sat (1080p)">
-                <button onclick="copy('Amazon Sat (1080p)')">COPIAR IP</button>
+                <strong>AMAZON SAT (1080P)</strong>
+                <input type="text" value="https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8" id="url--2674208467092934488" readonly>
+                <button onclick="copy('url--2674208467092934488')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>BDC TV (576p)</strong><br><br>
-                <input type="text" value="https://video01.kshost.com.br/bdctv/bdctv/playlist.m3u8" id="url-BDC TV (576p)">
-                <button onclick="copy('BDC TV (576p)')">COPIAR IP</button>
+                <strong>BDC TV (576P)</strong>
+                <input type="text" value="https://video01.kshost.com.br/bdctv/bdctv/playlist.m3u8" id="url-6762935350930393310" readonly>
+                <button onclick="copy('url-6762935350930393310')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Boas Novas (1080p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8" id="url-Boas Novas (1080p)">
-                <button onclick="copy('Boas Novas (1080p)')">COPIAR IP</button>
+                <strong>BOAS NOVAS (1080P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8" id="url-2212261588072699606" readonly>
+                <button onclick="copy('url-2212261588072699606')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Cabo Frio TV (720p)</strong><br><br>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/ararutv/_definst_/ararutv/playlist.m3u8" id="url-Cabo Frio TV (720p)">
-                <button onclick="copy('Cabo Frio TV (720p)')">COPIAR IP</button>
+                <strong>CABO FRIO TV (720P)</strong>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/ararutv/_definst_/ararutv/playlist.m3u8" id="url-5474776402323723731" readonly>
+                <button onclick="copy('url-5474776402323723731')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal 25 Jundiaí (404p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8" id="url-Canal 25 Jundiaí (404p) [Not 24/7]">
-                <button onclick="copy('Canal 25 Jundiaí (404p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CANAL 25 JUNDIAÍ (404P) [NOT 24/7]</strong>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8" id="url--1275488357378308936" readonly>
+                <button onclick="copy('url--1275488357378308936')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal 38 (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8" id="url-Canal 38 (720p)">
-                <button onclick="copy('Canal 38 (720p)')">COPIAR IP</button>
+                <strong>CANAL 38 (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8" id="url--8134591284216645459" readonly>
+                <button onclick="copy('url--8134591284216645459')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal do Criador (1080p)</strong><br><br>
-                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canaldocriador.smil/playlist.m3u8" id="url-Canal do Criador (1080p)">
-                <button onclick="copy('Canal do Criador (1080p)')">COPIAR IP</button>
+                <strong>CANAL DO CRIADOR (1080P)</strong>
+                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canaldocriador.smil/playlist.m3u8" id="url-1195434636293532084" readonly>
+                <button onclick="copy('url-1195434636293532084')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal do Inter (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://video01.soultv.com.br/internacional/internacional/playlist.m3u8" id="url-Canal do Inter (720p) [Not 24/7]">
-                <button onclick="copy('Canal do Inter (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CANAL DO INTER (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://video01.soultv.com.br/internacional/internacional/playlist.m3u8" id="url-434606659285360615" readonly>
+                <button onclick="copy('url-434606659285360615')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Educação (720p)</strong><br><br>
-                <input type="text" value="https://canaleducacao-stream.ebc.com.br/index.m3u8" id="url-Canal Educação (720p)">
-                <button onclick="copy('Canal Educação (720p)')">COPIAR IP</button>
+                <strong>CANAL EDUCAÇÃO (720P)</strong>
+                <input type="text" value="https://canaleducacao-stream.ebc.com.br/index.m3u8" id="url-7054135004109953223" readonly>
+                <button onclick="copy('url-7054135004109953223')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Gov (720p)</strong><br><br>
-                <input type="text" value="https://canalgov-stream.ebc.com.br/index.m3u8" id="url-Canal Gov (720p)">
-                <button onclick="copy('Canal Gov (720p)')">COPIAR IP</button>
+                <strong>CANAL GOV (720P)</strong>
+                <input type="text" value="https://canalgov-stream.ebc.com.br/index.m3u8" id="url--4660613789350520492" readonly>
+                <button onclick="copy('url--4660613789350520492')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Libras (720p)</strong><br><br>
-                <input type="text" value="https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8" id="url-Canal Libras (720p)">
-                <button onclick="copy('Canal Libras (720p)')">COPIAR IP</button>
+                <strong>CANAL LIBRAS (720P)</strong>
+                <input type="text" value="https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8" id="url--2369408351890075607" readonly>
+                <button onclick="copy('url--2369408351890075607')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Ricos (480p)</strong><br><br>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/ricostv/ricostv/playlist.m3u8" id="url-Canal Ricos (480p)">
-                <button onclick="copy('Canal Ricos (480p)')">COPIAR IP</button>
+                <strong>CANAL RICOS (480P)</strong>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/ricostv/ricostv/playlist.m3u8" id="url-6736134335401478127" readonly>
+                <button onclick="copy('url-6736134335401478127')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Rural (1080p)</strong><br><br>
-                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canalrural.smil/playlist.m3u8" id="url-Canal Rural (1080p)">
-                <button onclick="copy('Canal Rural (1080p)')">COPIAR IP</button>
+                <strong>CANAL RURAL (1080P)</strong>
+                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canalrural.smil/playlist.m3u8" id="url--7174678605882610726" readonly>
+                <button onclick="copy('url--7174678605882610726')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Canal Saúde (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://arkyvbre1g.zoeweb.tv/fiocruz/fiocruz.stream/playlist.m3u8" id="url-Canal Saúde (720p) [Not 24/7]">
-                <button onclick="copy('Canal Saúde (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CANAL SAÚDE (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://arkyvbre1g.zoeweb.tv/fiocruz/fiocruz.stream/playlist.m3u8" id="url-6574447795951630727" readonly>
+                <button onclick="copy('url-6574447795951630727')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Catve2 (720p)</strong><br><br>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8" id="url-Catve2 (720p)">
-                <button onclick="copy('Catve2 (720p)')">COPIAR IP</button>
+                <strong>CATVE FM (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8" id="url--2748241801461444240" readonly>
+                <button onclick="copy('url--2748241801461444240')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Catve FM (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8" id="url-Catve FM (720p) [Not 24/7]">
-                <button onclick="copy('Catve FM (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CATVE MASTER TV (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8" id="url--3933924015356001223" readonly>
+                <button onclick="copy('url--3933924015356001223')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Catve Master TV (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8" id="url-Catve Master TV (720p) [Not 24/7]">
-                <button onclick="copy('Catve Master TV (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CATVE2 (720P)</strong>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8" id="url--4640858609639408965" readonly>
+                <button onclick="copy('url--4640858609639408965')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Chroma TV (480p)</strong><br><br>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/8054/8054/playlist.m3u8" id="url-Chroma TV (480p)">
-                <button onclick="copy('Chroma TV (480p)')">COPIAR IP</button>
+                <strong>CAZETV (1080I)</strong>
+                <input type="text" value="https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8" id="url-5903725309688226319" readonly>
+                <button onclick="copy('url-5903725309688226319')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Classique TV (360p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/classique/classique/playlist.m3u8" id="url-Classique TV (360p)">
-                <button onclick="copy('Classique TV (360p)')">COPIAR IP</button>
+                <strong>CHROMA TV (480P)</strong>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/8054/8054/playlist.m3u8" id="url--3754329440135705179" readonly>
+                <button onclick="copy('url--3754329440135705179')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>COM Brasil (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8" id="url-COM Brasil (1080p) [Not 24/7]">
-                <button onclick="copy('COM Brasil (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CINDIE TV (1080P)</strong>
+                <input type="text" value="https://d20xuwbyc4yoag.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-CINDIE/387.m3u8?ads.vf=grWTpG3NQNi" id="url--5679988462139277023" readonly>
+                <button onclick="copy('url--5679988462139277023')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Conecta+ TV (720p)</strong><br><br>
-                <input type="text" value="http://189.14.239.62:1935/webtv/livestream1/playlist.m3u8" id="url-Conecta+ TV (720p)">
-                <button onclick="copy('Conecta+ TV (720p)')">COPIAR IP</button>
+                <strong>CINDIE TV (1080P)</strong>
+                <input type="text" value="https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8" id="url-4209785196791837075" readonly>
+                <button onclick="copy('url-4209785196791837075')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>ConecTV Brasil (720p)</strong><br><br>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8" id="url-ConecTV Brasil (720p)">
-                <button onclick="copy('ConecTV Brasil (720p)')">COPIAR IP</button>
+                <strong>CLASSIQUE TV (360P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/classique/classique/playlist.m3u8" id="url-5137254581871952504" readonly>
+                <button onclick="copy('url-5137254581871952504')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Conexão TV (720p)</strong><br><br>
-                <input type="text" value="https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8" id="url-Conexão TV (720p)">
-                <button onclick="copy('Conexão TV (720p)')">COPIAR IP</button>
+                <strong>COM BRASIL (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8" id="url-2231768909182601416" readonly>
+                <button onclick="copy('url-2231768909182601416')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Cultura Pará (480p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8" id="url-Cultura Pará (480p) [Not 24/7]">
-                <button onclick="copy('Cultura Pará (480p) [Not 24/7]')">COPIAR IP</button>
+                <strong>CONECTA+ TV (720P)</strong>
+                <input type="text" value="http://189.14.239.62:1935/webtv/livestream1/playlist.m3u8" id="url-690511978700991902" readonly>
+                <button onclick="copy('url-690511978700991902')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>CWB TV (720p)</strong><br><br>
-                <input type="text" value="https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8" id="url-CWB TV (720p)">
-                <button onclick="copy('CWB TV (720p)')">COPIAR IP</button>
+                <strong>CONECTV BRASIL (720P)</strong>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8" id="url-7391962801958534565" readonly>
+                <button onclick="copy('url-7391962801958534565')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Demais TV (720p)</strong><br><br>
-                <input type="text" value="https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8" id="url-Demais TV (720p)">
-                <button onclick="copy('Demais TV (720p)')">COPIAR IP</button>
+                <strong>CONEXÃO TV (720P)</strong>
+                <input type="text" value="https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8" id="url--8268608246816552967" readonly>
+                <button onclick="copy('url--8268608246816552967')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Despertar TV (720p)</strong><br><br>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8" id="url-Despertar TV (720p)">
-                <button onclick="copy('Despertar TV (720p)')">COPIAR IP</button>
+                <strong>CULTURA PARÁ (480P) [NOT 24/7]</strong>
+                <input type="text" value="http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8" id="url-3682935632441106339" readonly>
+                <button onclick="copy('url-3682935632441106339')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Elemental Channel (1080p)</strong><br><br>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/8116/8116/playlist.m3u8" id="url-Elemental Channel (1080p)">
-                <button onclick="copy('Elemental Channel (1080p)')">COPIAR IP</button>
+                <strong>CWB TV (720P)</strong>
+                <input type="text" value="https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8" id="url-8741955801157557792" readonly>
+                <button onclick="copy('url-8741955801157557792')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>ElyTV (360p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvsite.com/ely/ely/playlist.m3u8" id="url-ElyTV (360p)">
-                <button onclick="copy('ElyTV (360p)')">COPIAR IP</button>
+                <strong>DEMAIS TV (720P)</strong>
+                <input type="text" value="https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8" id="url--6377746137785547897" readonly>
+                <button onclick="copy('url--6377746137785547897')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>EUTV (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8" id="url-EUTV (720p)">
-                <button onclick="copy('EUTV (720p)')">COPIAR IP</button>
+                <strong>DESPERTAR TV (720P)</strong>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8" id="url--6942383688397565018" readonly>
+                <button onclick="copy('url--6942383688397565018')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Fala Litoral (480p)</strong><br><br>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8" id="url-Fala Litoral (480p)">
-                <button onclick="copy('Fala Litoral (480p)')">COPIAR IP</button>
+                <strong>ELEMENTAL CHANNEL (1080P)</strong>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/8116/8116/playlist.m3u8" id="url--5854389433814286468" readonly>
+                <button onclick="copy('url--5854389433814286468')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Fonte TV (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8" id="url-Fonte TV (1080p) [Not 24/7]">
-                <button onclick="copy('Fonte TV (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>ELYTV (360P)</strong>
+                <input type="text" value="https://stmv1.srvsite.com/ely/ely/playlist.m3u8" id="url--7462502211711965338" readonly>
+                <button onclick="copy('url--7462502211711965338')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Geekdot (720p)</strong><br><br>
-                <input type="text" value="https://stream.ichibantv.com:3764/hybrid/play.m3u8" id="url-Geekdot (720p)">
-                <button onclick="copy('Geekdot (720p)')">COPIAR IP</button>
+                <strong>EUTV (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8" id="url--493777246752013408" readonly>
+                <button onclick="copy('url--493777246752013408')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Ghost TV (712p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://stmv.video.expressolider.com.br/ghostv/ghostv/playlist.m3u8" id="url-Ghost TV (712p) [Not 24/7]">
-                <button onclick="copy('Ghost TV (712p) [Not 24/7]')">COPIAR IP</button>
+                <strong>FALA LITORAL (480P)</strong>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8" id="url-3938916545784481028" readonly>
+                <button onclick="copy('url-3938916545784481028')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Gloob (576p)</strong><br><br>
-                <input type="text" value="http://45.235.0.78/Gloob/playlist.m3u8" id="url-Gloob (576p)">
-                <button onclick="copy('Gloob (576p)')">COPIAR IP</button>
+                <strong>FONTE TV (1080P) [NOT 24/7]</strong>
+                <input type="text" value="http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8" id="url--6357619648479179616" readonly>
+                <button onclick="copy('url--6357619648479179616')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Gloob</strong><br><br>
-                <input type="text" value="http://79.127.243.211:14436/_.m3u8" id="url-Gloob">
-                <button onclick="copy('Gloob')">COPIAR IP</button>
+                <strong>GE FAST (1080P)</strong>
+                <input type="text" value="https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8" id="url--8682475215405396189" readonly>
+                <button onclick="copy('url--8682475215405396189')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Gospel Cartoon (360p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8" id="url-Gospel Cartoon (360p)">
-                <button onclick="copy('Gospel Cartoon (360p)')">COPIAR IP</button>
+                <strong>GE FAST (1080P)</strong>
+                <input type="text" value="https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8" id="url-3597217684436884755" readonly>
+                <button onclick="copy('url-3597217684436884755')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Gospel Movie TV (360p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/gospelf/gospelf/playlist.m3u8" id="url-Gospel Movie TV (360p)">
-                <button onclick="copy('Gospel Movie TV (360p)')">COPIAR IP</button>
+                <strong>GEEKDOT (720P)</strong>
+                <input type="text" value="https://stream.ichibantv.com:3764/hybrid/play.m3u8" id="url-7695609378405660632" readonly>
+                <button onclick="copy('url-7695609378405660632')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>ISTV (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://stmv1.srvstm.com/sistema7933/sistema7933/playlist.m3u8" id="url-ISTV (720p) [Not 24/7]">
-                <button onclick="copy('ISTV (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>GHOST TV (712P) [NOT 24/7]</strong>
+                <input type="text" value="https://stmv.video.expressolider.com.br/ghostv/ghostv/playlist.m3u8" id="url--4595429623490041263" readonly>
+                <button onclick="copy('url--4595429623490041263')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Jovem Pan News (JP News) (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/index.m3u8" id="url-Jovem Pan News (JP News) (1080p) [Not 24/7]">
-                <button onclick="copy('Jovem Pan News (JP News) (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>GLOOB</strong>
+                <input type="text" value="http://79.127.243.211:14436/_.m3u8" id="url--5739721579334839250" readonly>
+                <button onclick="copy('url--5739721579334839250')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>KpopTV Play (576p)</strong><br><br>
-                <input type="text" value="https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8" id="url-KpopTV Play (576p)">
-                <button onclick="copy('KpopTV Play (576p)')">COPIAR IP</button>
+                <strong>GLOOB (576P)</strong>
+                <input type="text" value="http://45.235.0.78/Gloob/playlist.m3u8" id="url-4931166546030588936" readonly>
+                <button onclick="copy('url-4931166546030588936')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Kuriakos Cine (1080p)</strong><br><br>
-                <input type="text" value="https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8" id="url-Kuriakos Cine (1080p)">
-                <button onclick="copy('Kuriakos Cine (1080p)')">COPIAR IP</button>
+                <strong>GLOOB WEB [NOT 24/7]</strong>
+                <input type="text" value="https://vs20.live.opencaster.com/globiosat_73a904af/index.m3u8" id="url-1803907703797402768" readonly>
+                <button onclick="copy('url-1803907703797402768')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Kuriakos Kids (1080p)</strong><br><br>
-                <input type="text" value="https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8" id="url-Kuriakos Kids (1080p)">
-                <button onclick="copy('Kuriakos Kids (1080p)')">COPIAR IP</button>
+                <strong>GOSPEL CARTOON (360P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8" id="url--4020273409366302997" readonly>
+                <button onclick="copy('url--4020273409366302997')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Loading (720p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8" id="url-Loading (720p)">
-                <button onclick="copy('Loading (720p)')">COPIAR IP</button>
+                <strong>GOSPEL MOVIE TV (360P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/gospelf/gospelf/playlist.m3u8" id="url-300466477596337017" readonly>
+                <button onclick="copy('url-300466477596337017')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>MKK Web TV (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8" id="url-MKK Web TV (720p) [Not 24/7]">
-                <button onclick="copy('MKK Web TV (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>ISTV (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://stmv1.srvstm.com/sistema7933/sistema7933/playlist.m3u8" id="url-56223553850234579" readonly>
+                <button onclick="copy('url-56223553850234579')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Nova Era TV (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8" id="url-Nova Era TV (1080p) [Not 24/7]">
-                <button onclick="copy('Nova Era TV (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>JOVEM PAN NEWS (JP NEWS) (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/index.m3u8" id="url--8766958694276814546" readonly>
+                <button onclick="copy('url--8766958694276814546')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Novo Tempo (720p)</strong><br><br>
-                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnovotempo.smil/playlist.m3u8" id="url-Novo Tempo (720p)">
-                <button onclick="copy('Novo Tempo (720p)')">COPIAR IP</button>
+                <strong>KPOPTV PLAY (576P)</strong>
+                <input type="text" value="https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8" id="url-3766372981859768023" readonly>
+                <button onclick="copy('url-3766372981859768023')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Nuevo Tiempo (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnuevotiempo.smil/playlist.m3u8" id="url-Nuevo Tiempo (720p) [Not 24/7]">
-                <button onclick="copy('Nuevo Tiempo (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>KURIAKOS CINE (1080P)</strong>
+                <input type="text" value="https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8" id="url-8145478946612995083" readonly>
+                <button onclick="copy('url-8145478946612995083')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Plena TV (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9591/LVW9591_PmXtgATnaS/playlist.m3u8" id="url-Plena TV (720p)">
-                <button onclick="copy('Plena TV (720p)')">COPIAR IP</button>
+                <strong>KURIAKOS KIDS (1080P)</strong>
+                <input type="text" value="https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8" id="url--8518512476386692884" readonly>
+                <button onclick="copy('url--8518512476386692884')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Primer TV (1080p)</strong><br><br>
-                <input type="text" value="http://200.194.238.229:8383/live/primer/playlist.m3u8" id="url-Primer TV (1080p)">
-                <button onclick="copy('Primer TV (1080p)')">COPIAR IP</button>
+                <strong>LOADING (720P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8" id="url--8908393275605704545" readonly>
+                <button onclick="copy('url--8908393275605704545')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>RBATV (720p)</strong><br><br>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8" id="url-RBATV (720p)">
-                <button onclick="copy('RBATV (720p)')">COPIAR IP</button>
+                <strong>MKK WEB TV (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8" id="url-4936831977547902623" readonly>
+                <button onclick="copy('url-4936831977547902623')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record News (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8" id="url-Record News (720p) [Geo blocked]">
-                <button onclick="copy('Record News (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NICKONLINE (720P)</strong>
+                <input type="text" value="https://x1co.com.br/hls/stream.m3u8" id="url--8761007354144734138" readonly>
+                <button onclick="copy('url--8761007354144734138')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record News (720p)</strong><br><br>
-                <input type="text" value="https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8" id="url-Record News (720p)">
-                <button onclick="copy('Record News (720p)')">COPIAR IP</button>
+                <strong>NICKONLINE SPONGEBOB (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://spongebobnew.x1co.com.br/hls/stream.m3u8" id="url--1734380116935894182" readonly>
+                <button onclick="copy('url--1734380116935894182')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record News</strong><br><br>
-                <input type="text" value="https://stream.ads.ottera.tv/playlist.m3u8?network_id=2116" id="url-Record News">
-                <button onclick="copy('Record News')">COPIAR IP</button>
+                <strong>NICKONLINE SPONGEBOB (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://lowa8026-cmyk.github.io/Brazil/NickOnlineSpongebob.m3u8" id="url-7364116625446236464" readonly>
+                <button onclick="copy('url-7364116625446236464')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV Belem (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playpluspa-lh.akamaihd.net/i/pp_pa@377468/index_720_av-p.m3u8" id="url-Record TV Belem (720p) [Geo blocked]">
-                <button onclick="copy('Record TV Belem (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NICKTOONS BRASIL (480P)</strong>
+                <input type="text" value="https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8" id="url--310215294289850003" readonly>
+                <button onclick="copy('url--310215294289850003')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV Brasilia (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplusbsa-lh.akamaihd.net/i/pp_bsa@377860/index_720_av-p.m3u8" id="url-Record TV Brasilia (720p) [Geo blocked]">
-                <button onclick="copy('Record TV Brasilia (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NICKWEB (720P)</strong>
+                <input type="text" value="https://vs20.live.opencaster.com/nickelodeonbrasil_68f1743d/index.m3u8" id="url--1060577931697171490" readonly>
+                <button onclick="copy('url--1060577931697171490')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV Goias (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplusgoya-lh.akamaihd.net/i/pp_gna@377833/index_720_av-p.m3u8" id="url-Record TV Goias (720p) [Geo blocked]">
-                <button onclick="copy('Record TV Goias (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NOVA ERA TV (1080P) [NOT 24/7]</strong>
+                <input type="text" value="http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8" id="url-3276387743111093158" readonly>
+                <button onclick="copy('url-3276387743111093158')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV Itapoan (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplussdr-lh.akamaihd.net/i/pp_sdr@377858/index_720_av-b.m3u8" id="url-Record TV Itapoan (720p) [Geo blocked]">
-                <button onclick="copy('Record TV Itapoan (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NOVO TEMPO (720P)</strong>
+                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnovotempo.smil/playlist.m3u8" id="url-3697527132118374076" readonly>
+                <button onclick="copy('url-3697527132118374076')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV Rio (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplusrjo-lh.akamaihd.net/i/pp_rj@377859/index_720_av-p.m3u8" id="url-Record TV Rio (720p) [Geo blocked]">
-                <button onclick="copy('Record TV Rio (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>NUEVO TIEMPO (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnuevotiempo.smil/playlist.m3u8" id="url-7892420457487376603" readonly>
+                <button onclick="copy('url-7892420457487376603')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV RS (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playpluspoa-lh.akamaihd.net/i/pp_poa@377864/index_720_av-p.m3u8" id="url-Record TV RS (720p) [Geo blocked]">
-                <button onclick="copy('Record TV RS (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>PLAY TV (720P)</strong>
+                <input type="text" value="https://isaocorp.cloudecast.com/playtv/index.m3u8" id="url--4104493199676779754" readonly>
+                <button onclick="copy('url--4104493199676779754')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Record TV SP (720p) [Geo blocked]</strong><br><br>
-                <input type="text" value="https://playplusspo-lh.akamaihd.net/i/pp_sp@350176/index_720_av-p.m3u8" id="url-Record TV SP (720p) [Geo blocked]">
-                <button onclick="copy('Record TV SP (720p) [Geo blocked]')">COPIAR IP</button>
+                <strong>PLENA TV (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9591/LVW9591_PmXtgATnaS/playlist.m3u8" id="url--1878561086209193423" readonly>
+                <button onclick="copy('url--1878561086209193423')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>RecordTV</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8" id="url-RecordTV">
-                <button onclick="copy('RecordTV')">COPIAR IP</button>
+                <strong>PREMIERE FC 1</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6599242899504160891" readonly>
+                <button onclick="copy('url-6599242899504160891')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>RecordTV Interior SP</strong><br><br>
-                <input type="text" value="http://200.77.176.130:8000/udp/224.0.0.4:49152" id="url-RecordTV Interior SP">
-                <button onclick="copy('RecordTV Interior SP')">COPIAR IP</button>
+                <strong>PREMIERE FC 2</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6261888067090331180" readonly>
+                <button onclick="copy('url-6261888067090331180')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede Gospel (1080p)</strong><br><br>
-                <input type="text" value="https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8" id="url-Rede Gospel (1080p)">
-                <button onclick="copy('Rede Gospel (1080p)')">COPIAR IP</button>
+                <strong>PREMIERE FC 3</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--7376461772735424895" readonly>
+                <button onclick="copy('url--7376461772735424895')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede Minas (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://v4-slbps-sambavideos.akamaized.net/live/3282,8114,ec4b5a296d97fa99bf990662f5b4f8e1;base64np;Mc8VDxqNjXKCAf8!/amlst:Mc_tFgfGiHOdQXPB/chunklist_.m3u8" id="url-Rede Minas (1080p) [Not 24/7]">
-                <button onclick="copy('Rede Minas (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>PREMIERE FC 4</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20009/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-685330693484106665" readonly>
+                <button onclick="copy('url-685330693484106665')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede NGT (1080p)</strong><br><br>
-                <input type="text" value="https://isaocorp.cloudecast.com/ngt/index.m3u8" id="url-Rede NGT (1080p)">
-                <button onclick="copy('Rede NGT (1080p)')">COPIAR IP</button>
+                <strong>PREMIERE FC 5</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20012/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--4780138121575759955" readonly>
+                <button onclick="copy('url--4780138121575759955')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede RC (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8" id="url-Rede RC (720p) [Not 24/7]">
-                <button onclick="copy('Rede RC (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>PREMIERE FC 6</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20015/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--3168860891729268503" readonly>
+                <button onclick="copy('url--3168860891729268503')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede SPTV (360p)</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8" id="url-Rede SPTV (360p)">
-                <button onclick="copy('Rede SPTV (360p)')">COPIAR IP</button>
+                <strong>PREMIERE FC 7</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20018/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-4333849642483422585" readonly>
+                <button onclick="copy('url-4333849642483422585')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede TV! ES (1080p)</strong><br><br>
-                <input type="text" value="https://streaming.cloudecast.com/hls/redetves/index.m3u8" id="url-Rede TV! ES (1080p)">
-                <button onclick="copy('Rede TV! ES (1080p)')">COPIAR IP</button>
+                <strong>PREMIERE FC 8</strong>
+                <input type="text" value="https://stm.sinalmycn.com/20021/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6455442846756110220" readonly>
+                <button onclick="copy('url-6455442846756110220')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede TV! SP (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8" id="url-Rede TV! SP (720p) [Not 24/7]">
-                <button onclick="copy('Rede TV! SP (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>PRIMER TV (1080P)</strong>
+                <input type="text" value="http://200.194.238.229:8383/live/primer/playlist.m3u8" id="url--6499750956480612230" readonly>
+                <button onclick="copy('url--6499750956480612230')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>RIT TV (1080p)</strong><br><br>
-                <input type="text" value="https://acesso.ecast.site:3648/live/ritlive.m3u8" id="url-RIT TV (1080p)">
-                <button onclick="copy('RIT TV (1080p)')">COPIAR IP</button>
+                <strong>RBATV (720P)</strong>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8" id="url-2747227470100982579" readonly>
+                <button onclick="copy('url-2747227470100982579')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Santa Cecilia TV (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://flash1.crossdigital.com.br/2063/2063/playlist.m3u8" id="url-Santa Cecilia TV (1080p) [Not 24/7]">
-                <button onclick="copy('Santa Cecilia TV (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>RECORD NEWS</strong>
+                <input type="text" value="https://stream.ads.ottera.tv/playlist.m3u8?network_id=2116" id="url-8962215959236633223" readonly>
+                <button onclick="copy('url-8962215959236633223')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Santa Cecilia TV (1080p)</strong><br><br>
-                <input type="text" value="https://5fb29de4928ea.streamlock.net/2063/2063/playlist.m3u8" id="url-Santa Cecilia TV (1080p)">
-                <button onclick="copy('Santa Cecilia TV (1080p)')">COPIAR IP</button>
+                <strong>RECORD NEWS (720P)</strong>
+                <input type="text" value="https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8" id="url--8556774422519157965" readonly>
+                <button onclick="copy('url--8556774422519157965')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SBT Interior (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8" id="url-SBT Interior (720p)">
-                <button onclick="copy('SBT Interior (720p)')">COPIAR IP</button>
+                <strong>RECORD NEWS (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8" id="url--968115013311385249" readonly>
+                <button onclick="copy('url--968115013311385249')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Sertão TV (720p)</strong><br><br>
-                <input type="text" value="http://wz4.dnip.com.br/sertaotv/sertaotv.sdp/playlist.m3u8" id="url-Sertão TV (720p)">
-                <button onclick="copy('Sertão TV (720p)')">COPIAR IP</button>
+                <strong>RECORD TV BELEM (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playpluspa-lh.akamaihd.net/i/pp_pa@377468/index_720_av-p.m3u8" id="url--4940439163571531380" readonly>
+                <button onclick="copy('url--4940439163571531380')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SESC TV (1080p)</strong><br><br>
-                <input type="text" value="https://slbps-ml-sambatech.akamaized.net/samba-live/2472/7424/8a00fe7cc36ac263b2c3e9324497d5ff/video/93a9920d-1b24-4c5e-a7d2-63d5489f59b5_index.m3u8" id="url-SESC TV (1080p)">
-                <button onclick="copy('SESC TV (1080p)')">COPIAR IP</button>
+                <strong>RECORD TV BRASILIA (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplusbsa-lh.akamaihd.net/i/pp_bsa@377860/index_720_av-p.m3u8" id="url-2354556782842193342" readonly>
+                <button onclick="copy('url-2354556782842193342')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SIC TV (720p)</strong><br><br>
-                <input type="text" value="https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8" id="url-SIC TV (720p)">
-                <button onclick="copy('SIC TV (720p)')">COPIAR IP</button>
+                <strong>RECORD TV GOIAS (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplusgoya-lh.akamaihd.net/i/pp_gna@377833/index_720_av-p.m3u8" id="url--2631639850334726801" readonly>
+                <button onclick="copy('url--2631639850334726801')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>STZ TV (1080p)</strong><br><br>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8" id="url-STZ TV (1080p)">
-                <button onclick="copy('STZ TV (1080p)')">COPIAR IP</button>
+                <strong>RECORD TV ITAPOAN (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplussdr-lh.akamaihd.net/i/pp_sdr@377858/index_720_av-b.m3u8" id="url--1470492403247521563" readonly>
+                <button onclick="copy('url--1470492403247521563')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TCM 10 HD (1080p)</strong><br><br>
-                <input type="text" value="https://live.tcm10.com.br/tcm10hd/stream.m3u8" id="url-TCM 10 HD (1080p)">
-                <button onclick="copy('TCM 10 HD (1080p)')">COPIAR IP</button>
+                <strong>RECORD TV RIO (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplusrjo-lh.akamaihd.net/i/pp_rj@377859/index_720_av-p.m3u8" id="url--1110665300737469537" readonly>
+                <button onclick="copy('url--1110665300737469537')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Times Brasil (1080p)</strong><br><br>
-                <input type="text" value="https://cr7v.short.gy/ManoTV/TimesBrasil/Whats75991634025/CNBC/Index.m3u8" id="url-Times Brasil (1080p)">
-                <button onclick="copy('Times Brasil (1080p)')">COPIAR IP</button>
+                <strong>RECORD TV RS (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playpluspoa-lh.akamaihd.net/i/pp_poa@377864/index_720_av-p.m3u8" id="url-7873949906756419533" readonly>
+                <button onclick="copy('url-7873949906756419533')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV A Folha (720p)</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8" id="url-TV A Folha (720p)">
-                <button onclick="copy('TV A Folha (720p)')">COPIAR IP</button>
+                <strong>RECORD TV SP (720P) [GEO-BLOCKED]</strong>
+                <input type="text" value="https://playplusspo-lh.akamaihd.net/i/pp_sp@350176/index_720_av-p.m3u8" id="url--987502892518627941" readonly>
+                <button onclick="copy('url--987502892518627941')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Aldeia (720p)</strong><br><br>
-                <input type="text" value="https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8" id="url-TV Aldeia (720p)">
-                <button onclick="copy('TV Aldeia (720p)')">COPIAR IP</button>
+                <strong>RECORDTV</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8" id="url-7017266339968236168" readonly>
+                <button onclick="copy('url-7017266339968236168')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Aliança Catarinense (720p)</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8" id="url-TV Aliança Catarinense (720p)">
-                <button onclick="copy('TV Aliança Catarinense (720p)')">COPIAR IP</button>
+                <strong>RECORDTV INTERIOR SP</strong>
+                <input type="text" value="http://200.77.176.130:8000/udp/224.0.0.4:49152" id="url--7223665204620932507" readonly>
+                <button onclick="copy('url--7223665204620932507')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Alternativa (410p)</strong><br><br>
-                <input type="text" value="https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8" id="url-TV Alternativa (410p)">
-                <button onclick="copy('TV Alternativa (410p)')">COPIAR IP</button>
+                <strong>REDE GLOBO (1080P)</strong>
+                <input type="text" value="https://cors-proxy.cooks.fyi/http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8" id="url-6757739825201867408" readonly>
+                <button onclick="copy('url-6757739825201867408')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Aparecida (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8" id="url-TV Aparecida (1080p) [Not 24/7]">
-                <button onclick="copy('TV Aparecida (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>REDE GOSPEL (1080P)</strong>
+                <input type="text" value="https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8" id="url--6707579296118089543" readonly>
+                <button onclick="copy('url--6707579296118089543')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Arapuan (720p)</strong><br><br>
-                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8" id="url-TV Arapuan (720p)">
-                <button onclick="copy('TV Arapuan (720p)')">COPIAR IP</button>
+                <strong>REDE MINAS (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://v4-slbps-sambavideos.akamaized.net/live/3282,8114,ec4b5a296d97fa99bf990662f5b4f8e1;base64np;Mc8VDxqNjXKCAf8!/amlst:Mc_tFgfGiHOdQXPB/chunklist_.m3u8" id="url--9192650946837611847" readonly>
+                <button onclick="copy('url--9192650946837611847')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Aratu (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8" id="url-TV Aratu (720p)">
-                <button onclick="copy('TV Aratu (720p)')">COPIAR IP</button>
+                <strong>REDE NGT (1080P)</strong>
+                <input type="text" value="https://isaocorp.cloudecast.com/ngt/index.m3u8" id="url--808494090889284037" readonly>
+                <button onclick="copy('url--808494090889284037')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Assembléia Ceará (720p)</strong><br><br>
-                <input type="text" value="https://jjn5dkk9bd.zoeweb.tv/z404-live/stream/playlist.m3u8" id="url-TV Assembléia Ceará (720p)">
-                <button onclick="copy('TV Assembléia Ceará (720p)')">COPIAR IP</button>
+                <strong>REDE RC (720P) [NOT 24/7]</strong>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8" id="url--3398274808527340658" readonly>
+                <button onclick="copy('url--3398274808527340658')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Birigui (640p)</strong><br><br>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url-TV Birigui (640p)">
-                <button onclick="copy('TV Birigui (640p)')">COPIAR IP</button>
+                <strong>REDE SPTV (360P)</strong>
+                <input type="text" value="https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8" id="url--3381001403019102633" readonly>
+                <button onclick="copy('url--3381001403019102633')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Birigui (320p)</strong><br><br>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8" id="url-TV Birigui (320p)">
-                <button onclick="copy('TV Birigui (320p)')">COPIAR IP</button>
+                <strong>REDE TV! ES (1080P)</strong>
+                <input type="text" value="https://streaming.cloudecast.com/hls/redetves/index.m3u8" id="url--3605802406162926337" readonly>
+                <button onclick="copy('url--3605802406162926337')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Birigui (320p)</strong><br><br>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/tvdigitalbirigui/playlist.m3u8" id="url-TV Birigui (320p)">
-                <button onclick="copy('TV Birigui (320p)')">COPIAR IP</button>
+                <strong>REDE TV! MAIS</strong>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8" id="url--1863743661007826985" readonly>
+                <button onclick="copy('url--1863743661007826985')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Brasil (720p)</strong><br><br>
-                <input type="text" value="https://tvbrasil-stream.ebc.com.br/index.m3u8" id="url-TV Brasil (720p)">
-                <button onclick="copy('TV Brasil (720p)')">COPIAR IP</button>
+                <strong>REDE TV! SP (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8" id="url-3439816879291154861" readonly>
+                <button onclick="copy('url-3439816879291154861')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Brasil Oeste (720p)</strong><br><br>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8" id="url-TV Brasil Oeste (720p)">
-                <button onclick="copy('TV Brasil Oeste (720p)')">COPIAR IP</button>
+                <strong>REDETV! PARANA</strong>
+                <input type="text" value="https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8" id="url-3307979237924645555" readonly>
+                <button onclick="copy('url-3307979237924645555')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Brusque (720p)</strong><br><br>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8" id="url-TV Brusque (720p)">
-                <button onclick="copy('TV Brusque (720p)')">COPIAR IP</button>
+                <strong>RIT TV (1080P)</strong>
+                <input type="text" value="https://acesso.ecast.site:3648/live/ritlive.m3u8" id="url--3404584517206727465" readonly>
+                <button onclick="copy('url--3404584517206727465')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Câmara (1080p)</strong><br><br>
-                <input type="text" value="https://stream3.camara.gov.br/tv1/manifest.m3u8" id="url-TV Câmara (1080p)">
-                <button onclick="copy('TV Câmara (1080p)')">COPIAR IP</button>
+                <strong>SANTA CECILIA TV (1080P)</strong>
+                <input type="text" value="https://5fb29de4928ea.streamlock.net/2063/2063/playlist.m3u8" id="url-3738833595575281796" readonly>
+                <button onclick="copy('url-3738833595575281796')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Câmara 2 (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://stream3.camara.gov.br/tv2/manifest.m3u8" id="url-TV Câmara 2 (1080p) [Not 24/7]">
-                <button onclick="copy('TV Câmara 2 (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>SANTA CECILIA TV (1080P) [NOT 24/7]</strong>
+                <input type="text" value="http://flash1.crossdigital.com.br/2063/2063/playlist.m3u8" id="url-1314846935391712705" readonly>
+                <button onclick="copy('url-1314846935391712705')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Câmara Salvador (288p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://596639ebdd89b.streamlock.net/8114/8114/playlist.m3u8" id="url-TV Câmara Salvador (288p) [Not 24/7]">
-                <button onclick="copy('TV Câmara Salvador (288p) [Not 24/7]')">COPIAR IP</button>
+                <strong>SBT CUIABA</strong>
+                <input type="text" value="https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8" id="url-1146663051103857345" readonly>
+                <button onclick="copy('url-1146663051103857345')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Cancao Nova (720p)</strong><br><br>
-                <input type="text" value="https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8" id="url-TV Cancao Nova (720p)">
-                <button onclick="copy('TV Cancao Nova (720p)')">COPIAR IP</button>
+                <strong>SBT INTERIOR (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8" id="url--1694607539113579665" readonly>
+                <button onclick="copy('url--1694607539113579665')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Cidade de Petrópolis (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8" id="url-TV Cidade de Petrópolis (1080p) [Not 24/7]">
-                <button onclick="copy('TV Cidade de Petrópolis (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>SBT NOVA MUTUM</strong>
+                <input type="text" value="https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8" id="url--1738218065453250856" readonly>
+                <button onclick="copy('url--1738218065453250856')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Cidade Oeste</strong><br><br>
-                <input type="text" value="https://radios.dataprimer.com.br:5443/LiveApp/streams/psuqNyPC1AW1BcUZ1573443847601.m3u8" id="url-TV Cidade Oeste">
-                <button onclick="copy('TV Cidade Oeste')">COPIAR IP</button>
+                <strong>SBT RONDONOPOLIS</strong>
+                <input type="text" value="https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8" id="url-893141452900613152" readonly>
+                <button onclick="copy('url-893141452900613152')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Cidade Verde (720p)</strong><br><br>
-                <input type="text" value="https://stmv1.transmissaodigital.com/cidadeverdenovo/cidadeverdenovo/playlist.m3u8" id="url-TV Cidade Verde (720p)">
-                <button onclick="copy('TV Cidade Verde (720p)')">COPIAR IP</button>
+                <strong>SBT SINOP</strong>
+                <input type="text" value="https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8" id="url--449454967837184170" readonly>
+                <button onclick="copy('url--449454967837184170')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Clube (720p)</strong><br><br>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8" id="url-TV Clube (720p)">
-                <button onclick="copy('TV Clube (720p)')">COPIAR IP</button>
+                <strong>SERTÃO TV (720P)</strong>
+                <input type="text" value="http://wz4.dnip.com.br/sertaotv/sertaotv.sdp/playlist.m3u8" id="url--2201906159455793565" readonly>
+                <button onclick="copy('url--2201906159455793565')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Cultura</strong><br><br>
-                <input type="text" value="https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8" id="url-TV Cultura">
-                <button onclick="copy('TV Cultura')">COPIAR IP</button>
+                <strong>SESC TV (1080P)</strong>
+                <input type="text" value="https://slbps-ml-sambatech.akamaized.net/samba-live/2472/7424/8a00fe7cc36ac263b2c3e9324497d5ff/video/93a9920d-1b24-4c5e-a7d2-63d5489f59b5_index.m3u8" id="url--3463359633581251976" readonly>
+                <button onclick="copy('url--3463359633581251976')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Curuça (360p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8" id="url-TV Curuça (360p)">
-                <button onclick="copy('TV Curuça (360p)')">COPIAR IP</button>
+                <strong>SIC TV (720P)</strong>
+                <input type="text" value="https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8" id="url-5111946437700046062" readonly>
+                <button onclick="copy('url-5111946437700046062')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV das Artes (360p)</strong><br><br>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdasartes/tvdasartes/playlist.m3u8" id="url-TV das Artes (360p)">
-                <button onclick="copy('TV das Artes (360p)')">COPIAR IP</button>
+                <strong>SPORTV (1280P)</strong>
+                <input type="text" value="https://stm.sinalmycn.com/21000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--3136989038722888243" readonly>
+                <button onclick="copy('url--3136989038722888243')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Destak (360p)</strong><br><br>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/pascoal/pascoal/live.m3u8" id="url-TV Destak (360p)">
-                <button onclick="copy('TV Destak (360p)')">COPIAR IP</button>
+                <strong>SPORTV 2 (1280P)</strong>
+                <input type="text" value="https://stm.sinalmycn.com/21003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--7271178980512764101" readonly>
+                <button onclick="copy('url--7271178980512764101')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Destak (360p)</strong><br><br>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/_definst_/pascoal/playlist.m3u8" id="url-TV Destak (360p)">
-                <button onclick="copy('TV Destak (360p)')">COPIAR IP</button>
+                <strong>SPORTV 2 ALTERNATIVO (720P)</strong>
+                <input type="text" value="https://stm.sinalmycn.com/19025/video.m3u8" id="url--7792981184929131800" readonly>
+                <button onclick="copy('url--7792981184929131800')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Destak (320p)</strong><br><br>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/pascoal/playlist.m3u8" id="url-TV Destak (320p)">
-                <button onclick="copy('TV Destak (320p)')">COPIAR IP</button>
+                <strong>SPORTV 3 (1080P)</strong>
+                <input type="text" value="https://stm.sinalmycn.com/21006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-3348535148097241954" readonly>
+                <button onclick="copy('url-3348535148097241954')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Diário Macapá (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/marliomelohotmail.com/marliomelohotmail.com/playlist.m3u8" id="url-TV Diário Macapá (1080p) [Not 24/7]">
-                <button onclick="copy('TV Diário Macapá (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>SPORTV ALTERNATIVO (720P)</strong>
+                <input type="text" value="https://stm.sinalmycn.com/19024/video.m3u8" id="url-785241756973457407" readonly>
+                <button onclick="copy('url-785241756973457407')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Difusora Leste (1080p)</strong><br><br>
-                <input type="text" value="https://stream.amsolution.net.br:8443/live/60d0a8ea6b884/index.m3u8" id="url-TV Difusora Leste (1080p)">
-                <button onclick="copy('TV Difusora Leste (1080p)')">COPIAR IP</button>
+                <strong>STZ TV (1080P)</strong>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8" id="url--3657368116454218422" readonly>
+                <button onclick="copy('url--3657368116454218422')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Digital Biriguí (640p)</strong><br><br>
-                <input type="text" value="http://wse01.logicahost.com.br:1935/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url-TV Digital Biriguí (640p)">
-                <button onclick="copy('TV Digital Biriguí (640p)')">COPIAR IP</button>
+                <strong>TCM 10 HD (1080P)</strong>
+                <input type="text" value="https://live.tcm10.com.br/tcm10hd/stream.m3u8" id="url-5691671309085784672" readonly>
+                <button onclick="copy('url-5691671309085784672')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV do Povo (540p)</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/tvdopovo1/tvdopovo1/playlist.m3u8" id="url-TV do Povo (540p)">
-                <button onclick="copy('TV do Povo (540p)')">COPIAR IP</button>
+                <strong>TIKTOK RADIO BRASIL (1080P)</strong>
+                <input type="text" value="https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529" id="url--4186940859803303480" readonly>
+                <button onclick="copy('url--4186940859803303480')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Empire Magazine (720p)</strong><br><br>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/empiremagazinetv/empiremagazinetv/playlist.m3u8" id="url-TV Empire Magazine (720p)">
-                <button onclick="copy('TV Empire Magazine (720p)')">COPIAR IP</button>
+                <strong>TIMES BRASIL (1080P)</strong>
+                <input type="text" value="https://cr7v.short.gy/ManoTV/TimesBrasil/Whats75991634025/CNBC/Index.m3u8" id="url--8075420832460514664" readonly>
+                <button onclick="copy('url--8075420832460514664')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Encontro das Aguas</strong><br><br>
-                <input type="text" value="https://stmv7.samcast.com.br/sistemaencontrodasaguas/sistemaencontrodasaguas/playlist.m3u8" id="url-TV Encontro das Aguas">
-                <button onclick="copy('TV Encontro das Aguas')">COPIAR IP</button>
+                <strong>TIMES BRASIL (720P)</strong>
+                <input type="text" value="https://ssai2-ads.api.leiniao.com/global-adinsertion-api/hls/live/v2/21fdb6dd7491406bba86497a24390a25/playlist.m3u8" id="url--8839131259612985031" readonly>
+                <button onclick="copy('url--8839131259612985031')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Evangelizar (480p)</strong><br><br>
-                <input type="text" value="https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8" id="url-TV Evangelizar (480p)">
-                <button onclick="copy('TV Evangelizar (480p)')">COPIAR IP</button>
+                <strong>TV A CRITICA</strong>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8" id="url--989064988688276038" readonly>
+                <button onclick="copy('url--989064988688276038')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Futuro (1080p)</strong><br><br>
-                <input type="text" value="https://tv02.zas.media:1936/tvfuturo/tvfuturo/playlist.m3u8" id="url-TV Futuro (1080p)">
-                <button onclick="copy('TV Futuro (1080p)')">COPIAR IP</button>
+                <strong>TV A FOLHA (720P)</strong>
+                <input type="text" value="https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8" id="url--2714548083560338232" readonly>
+                <button onclick="copy('url--2714548083560338232')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Gideoes (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://streaming01.zas.media/gideoes/programacao/playlist.m3u8" id="url-TV Gideoes (1080p) [Not 24/7]">
-                <button onclick="copy('TV Gideoes (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV ALDEIA (720P)</strong>
+                <input type="text" value="https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8" id="url--7585189450725668957" readonly>
+                <button onclick="copy('url--7585189450725668957')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Grande Natal (1080p)</strong><br><br>
-                <input type="text" value="http://tvgrandenatalhd.duckdns.org:8080/hls/live.m3u8" id="url-TV Grande Natal (1080p)">
-                <button onclick="copy('TV Grande Natal (1080p)')">COPIAR IP</button>
+                <strong>TV ALIANÇA CATARINENSE (720P)</strong>
+                <input type="text" value="https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8" id="url--2493878061542670421" readonly>
+                <button onclick="copy('url--2493878061542670421')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Grao Pará (720p)</strong><br><br>
-                <input type="text" value="https://video01.kshost.com.br:4443/moises3834/moises3834/playlist.m3u8" id="url-TV Grao Pará (720p)">
-                <button onclick="copy('TV Grao Pará (720p)')">COPIAR IP</button>
+                <strong>TV ALTERNATIVA (410P)</strong>
+                <input type="text" value="https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8" id="url-1072247557228600770" readonly>
+                <button onclick="copy('url-1072247557228600770')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Guará (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8" id="url-TV Guará (720p) [Not 24/7]">
-                <button onclick="copy('TV Guará (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV APARECIDA (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8" id="url--7052695664270256284" readonly>
+                <button onclick="copy('url--7052695664270256284')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Interlagos (360p)</strong><br><br>
-                <input type="text" value="https://v8.ciclano.io:1443/tvinterlagos/_definst_/tvinterlagos/playlist.m3u8" id="url-TV Interlagos (360p)">
-                <button onclick="copy('TV Interlagos (360p)')">COPIAR IP</button>
+                <strong>TV ARAPUAN (720P)</strong>
+                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8" id="url-2933812509665750042" readonly>
+                <button onclick="copy('url-2933812509665750042')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Liberdade (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://srv1.paineldevideo.com/liberdaderadioetv/liberdaderadioetv/playlist.m3u8" id="url-TV Liberdade (720p) [Not 24/7]">
-                <button onclick="copy('TV Liberdade (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV ARATU (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8" id="url-4249227725222944461" readonly>
+                <button onclick="copy('url-4249227725222944461')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Life America (720p)</strong><br><br>
-                <input type="text" value="https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8" id="url-TV Life America (720p)">
-                <button onclick="copy('TV Life America (720p)')">COPIAR IP</button>
+                <strong>TV ASSEMBLÉIA CEARÁ (720P)</strong>
+                <input type="text" value="https://jjn5dkk9bd.zoeweb.tv/z404-live/stream/playlist.m3u8" id="url--4449807963312019814" readonly>
+                <button onclick="copy('url--4449807963312019814')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Mackenzie (480p)</strong><br><br>
-                <input type="text" value="https://player.internetaovivo.com:8443/live_tvmackenzieabr/tvmackenzieabr/playlist.m3u8" id="url-TV Mackenzie (480p)">
-                <button onclick="copy('TV Mackenzie (480p)')">COPIAR IP</button>
+                <strong>TV BIRIGUI (320P)</strong>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8" id="url-5350865738412301133" readonly>
+                <button onclick="copy('url-5350865738412301133')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Mais Maricá (1080p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8" id="url-TV Mais Maricá (1080p)">
-                <button onclick="copy('TV Mais Maricá (1080p)')">COPIAR IP</button>
+                <strong>TV BIRIGUI (320P)</strong>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/tvdigitalbirigui/playlist.m3u8" id="url--185652542042254477" readonly>
+                <button onclick="copy('url--185652542042254477')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Marajoara (720p)</strong><br><br>
-                <input type="text" value="https://tv02.zas.media:1936/tvmarajoara/tvmarajoara/playlist.m3u8" id="url-TV Marajoara (720p)">
-                <button onclick="copy('TV Marajoara (720p)')">COPIAR IP</button>
+                <strong>TV BIRIGUI (640P)</strong>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url-1798684952190945039" readonly>
+                <button onclick="copy('url-1798684952190945039')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV MAX (720p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmax/tvmax/playlist.m3u8" id="url-TV MAX (720p)">
-                <button onclick="copy('TV MAX (720p)')">COPIAR IP</button>
+                <strong>TV BRASIL (720P)</strong>
+                <input type="text" value="https://tvbrasil-stream.ebc.com.br/index.m3u8" id="url-7462423351381912810" readonly>
+                <button onclick="copy('url-7462423351381912810')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Metropole (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://cdn-fundacao-2110.ciclano.io:1443/fundacao-2110/fundacao-2110/playlist.m3u8" id="url-TV Metropole (720p) [Not 24/7]">
-                <button onclick="copy('TV Metropole (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV BRASIL OESTE (720P)</strong>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8" id="url--8545655225759437235" readonly>
+                <button onclick="copy('url--8545655225759437235')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Modelo (720p)</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/tvmodelo/tvmodelo/playlist.m3u" id="url-TV Modelo (720p)">
-                <button onclick="copy('TV Modelo (720p)')">COPIAR IP</button>
+                <strong>TV BRUSQUE (720P)</strong>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8" id="url--1408745482733463298" readonly>
+                <button onclick="copy('url--1408745482733463298')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Padre Cicero (720p)</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8" id="url-TV Padre Cicero (720p)">
-                <button onclick="copy('TV Padre Cicero (720p)')">COPIAR IP</button>
+                <strong>TV CANCAO NOVA (720P)</strong>
+                <input type="text" value="https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8" id="url--5666324294907719299" readonly>
+                <button onclick="copy('url--5666324294907719299')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Pantanal MS (360p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://5a2b083e9f360.streamlock.net/tvpantanal/tvpantanal.sdp/playlist.m3u8" id="url-TV Pantanal MS (360p) [Not 24/7]">
-                <button onclick="copy('TV Pantanal MS (360p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV CIDADE DE PETRÓPOLIS (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8" id="url--7836056894504961330" readonly>
+                <button onclick="copy('url--7836056894504961330')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Paraense (720p)</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u" id="url-TV Paraense (720p)">
-                <button onclick="copy('TV Paraense (720p)')">COPIAR IP</button>
+                <strong>TV CIDADE OESTE</strong>
+                <input type="text" value="https://radios.dataprimer.com.br:5443/LiveApp/streams/psuqNyPC1AW1BcUZ1573443847601.m3u8" id="url-5483744931201873166" readonly>
+                <button onclick="copy('url-5483744931201873166')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Paraná Turismo (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://200.189.113.201/hls/tve.m3u8" id="url-TV Paraná Turismo (720p) [Not 24/7]">
-                <button onclick="copy('TV Paraná Turismo (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV CIDADE VERDE (720P)</strong>
+                <input type="text" value="https://stmv1.transmissaodigital.com/cidadeverdenovo/cidadeverdenovo/playlist.m3u8" id="url--213352287565955234" readonly>
+                <button onclick="copy('url--213352287565955234')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Passo Fundo (720p)</strong><br><br>
-                <input type="text" value="https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8" id="url-TV Passo Fundo (720p)">
-                <button onclick="copy('TV Passo Fundo (720p)')">COPIAR IP</button>
+                <strong>TV CLUBE (720P)</strong>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8" id="url--6645080172441125701" readonly>
+                <button onclick="copy('url--6645080172441125701')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sandegi (360p)</strong><br><br>
-                <input type="text" value="https://video01.kshost.com.br/antonio9510/antonio9510/playlist.m3u8" id="url-TV Sandegi (360p)">
-                <button onclick="copy('TV Sandegi (360p)')">COPIAR IP</button>
+                <strong>TV CULTURA</strong>
+                <input type="text" value="https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8" id="url-4997396548957575049" readonly>
+                <button onclick="copy('url-4997396548957575049')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV São Raimundo (268p)</strong><br><br>
-                <input type="text" value="https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8" id="url-TV São Raimundo (268p)">
-                <button onclick="copy('TV São Raimundo (268p)')">COPIAR IP</button>
+                <strong>TV CURUÇA (360P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8" id="url-7069476810221758330" readonly>
+                <button onclick="copy('url-7069476810221758330')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Series 1 As Panteras (480p)</strong><br><br>
-                <input type="text" value="https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8" id="url-TV Series 1 As Panteras (480p)">
-                <button onclick="copy('TV Series 1 As Panteras (480p)')">COPIAR IP</button>
+                <strong>TV CÂMARA (1080P)</strong>
+                <input type="text" value="https://stream3.camara.gov.br/tv1/manifest.m3u8" id="url--7351467949981128411" readonly>
+                <button onclick="copy('url--7351467949981128411')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sim Cachoeiro (720p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8" id="url-TV Sim Cachoeiro (720p)">
-                <button onclick="copy('TV Sim Cachoeiro (720p)')">COPIAR IP</button>
+                <strong>TV CÂMARA 2 (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://stream3.camara.gov.br/tv2/manifest.m3u8" id="url--4097542756178013354" readonly>
+                <button onclick="copy('url--4097542756178013354')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sim Colatina (720p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8132/8132/playlist.m3u8" id="url-TV Sim Colatina (720p)">
-                <button onclick="copy('TV Sim Colatina (720p)')">COPIAR IP</button>
+                <strong>TV CÂMARA SALVADOR (288P) [NOT 24/7]</strong>
+                <input type="text" value="https://596639ebdd89b.streamlock.net/8114/8114/playlist.m3u8" id="url--6129746910412377639" readonly>
+                <button onclick="copy('url--6129746910412377639')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sim São Mateus (720p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8236/8236/playlist.m3u8" id="url-TV Sim São Mateus (720p)">
-                <button onclick="copy('TV Sim São Mateus (720p)')">COPIAR IP</button>
+                <strong>TV DAS ARTES (360P)</strong>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdasartes/tvdasartes/playlist.m3u8" id="url-4850379240378071071" readonly>
+                <button onclick="copy('url-4850379240378071071')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sol Comunidade (480p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://streaming03.zas.media:1935/tvsol/tvsol/playlist.m3u8" id="url-TV Sol Comunidade (480p) [Not 24/7]">
-                <button onclick="copy('TV Sol Comunidade (480p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV DESTAK (320P)</strong>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/pascoal/playlist.m3u8" id="url--1728418255364978501" readonly>
+                <button onclick="copy('url--1728418255364978501')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sul Bahia (320p)</strong><br><br>
-                <input type="text" value="https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8" id="url-TV Sul Bahia (320p)">
-                <button onclick="copy('TV Sul Bahia (320p)')">COPIAR IP</button>
+                <strong>TV DESTAK (360P)</strong>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/pascoal/pascoal/live.m3u8" id="url-5407988413717051135" readonly>
+                <button onclick="copy('url-5407988413717051135')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Sul de Minas (720p)</strong><br><br>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvsuldeminas/tvsuldeminas/playlist.m3u8" id="url-TV Sul de Minas (720p)">
-                <button onclick="copy('TV Sul de Minas (720p)')">COPIAR IP</button>
+                <strong>TV DESTAK (360P)</strong>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/_definst_/pascoal/playlist.m3u8" id="url-5135093042919549919" readonly>
+                <button onclick="copy('url-5135093042919549919')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Terceiro Anjo (360p)</strong><br><br>
-                <input type="text" value="https://streamer1.streamhost.org/salive/GMI3anjoh/playlist.m3u8" id="url-TV Terceiro Anjo (360p)">
-                <button onclick="copy('TV Terceiro Anjo (360p)')">COPIAR IP</button>
+                <strong>TV DIFUSORA LESTE (1080P)</strong>
+                <input type="text" value="https://stream.amsolution.net.br:8443/live/60d0a8ea6b884/index.m3u8" id="url--584719123589033605" readonly>
+                <button onclick="copy('url--584719123589033605')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Thathi (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8" id="url-TV Thathi (720p) [Not 24/7]">
-                <button onclick="copy('TV Thathi (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV DIGITAL BIRIGUÍ (640P)</strong>
+                <input type="text" value="http://wse01.logicahost.com.br:1935/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url--4783076166938379075" readonly>
+                <button onclick="copy('url--4783076166938379075')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV UFG (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://flash.softhost.com.br:1935/ufg/tvufgweb/playlist.m3u8" id="url-TV UFG (720p) [Not 24/7]">
-                <button onclick="copy('TV UFG (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV DIÁRIO MACAPÁ (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/marliomelohotmail.com/marliomelohotmail.com/playlist.m3u8" id="url-7711784021617113129" readonly>
+                <button onclick="copy('url-7711784021617113129')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV UFOP (1080p)</strong><br><br>
-                <input type="text" value="https://app.tvufop.com.br/hls/tvufop.m3u8" id="url-TV UFOP (1080p)">
-                <button onclick="copy('TV UFOP (1080p)')">COPIAR IP</button>
+                <strong>TV DO POVO (540P)</strong>
+                <input type="text" value="https://video01.logicahost.com.br/tvdopovo1/tvdopovo1/playlist.m3u8" id="url-8772596225608599576" readonly>
+                <button onclick="copy('url-8772596225608599576')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Universal (480p)</strong><br><br>
-                <input type="text" value="https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8" id="url-TV Universal (480p)">
-                <button onclick="copy('TV Universal (480p)')">COPIAR IP</button>
+                <strong>TV EMPIRE MAGAZINE (720P)</strong>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/empiremagazinetv/empiremagazinetv/playlist.m3u8" id="url--5011497769732256157" readonly>
+                <button onclick="copy('url--5011497769732256157')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Viçosa (480p)</strong><br><br>
-                <input type="text" value="http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8" id="url-TV Viçosa (480p)">
-                <button onclick="copy('TV Viçosa (480p)')">COPIAR IP</button>
+                <strong>TV ENCONTRO DAS AGUAS</strong>
+                <input type="text" value="https://stmv7.samcast.com.br/sistemaencontrodasaguas/sistemaencontrodasaguas/playlist.m3u8" id="url-27043801530981756" readonly>
+                <button onclick="copy('url-27043801530981756')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Vila Real (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10841/LVW10841_mT77z9o2cP/playlist.m3u8" id="url-TV Vila Real (720p)">
-                <button onclick="copy('TV Vila Real (720p)')">COPIAR IP</button>
+                <strong>TV EVANGELIZAR (480P)</strong>
+                <input type="text" value="https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8" id="url-1371686183614504288" readonly>
+                <button onclick="copy('url-1371686183614504288')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Zoom (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9730/LVW9730_LmUwslM8jt/playlist.m3u8" id="url-TV Zoom (720p)">
-                <button onclick="copy('TV Zoom (720p)')">COPIAR IP</button>
+                <strong>TV FUTURO (1080P)</strong>
+                <input type="text" value="https://tv02.zas.media:1936/tvfuturo/tvfuturo/playlist.m3u8" id="url-6817706206444076448" readonly>
+                <button onclick="copy('url-6817706206444076448')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVC Rio</strong><br><br>
-                <input type="text" value="https://video05.logicahost.com.br/comunitariario/comunitariario/playlist.m3u8" id="url-TVC Rio">
-                <button onclick="copy('TVC Rio')">COPIAR IP</button>
+                <strong>TV GIDEOES (1080P) [NOT 24/7]</strong>
+                <input type="text" value="https://streaming01.zas.media/gideoes/programacao/playlist.m3u8" id="url-5991663444059080377" readonly>
+                <button onclick="copy('url-5991663444059080377')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVCOM DF (360p)</strong><br><br>
-                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=" id="url-TVCOM DF (360p)">
-                <button onclick="copy('TVCOM DF (360p)')">COPIAR IP</button>
+                <strong>TV GRANDE NATAL (1080P)</strong>
+                <input type="text" value="http://tvgrandenatalhd.duckdns.org:8080/hls/live.m3u8" id="url--8449545514617495930" readonly>
+                <button onclick="copy('url--8449545514617495930')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVCOM Maceió (480p)</strong><br><br>
-                <input type="text" value="https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8" id="url-TVCOM Maceió (480p)">
-                <button onclick="copy('TVCOM Maceió (480p)')">COPIAR IP</button>
+                <strong>TV GRAO PARÁ (720P)</strong>
+                <input type="text" value="https://video01.kshost.com.br:4443/moises3834/moises3834/playlist.m3u8" id="url-5137645358959895678" readonly>
+                <button onclick="copy('url-5137645358959895678')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVE RS (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="http://selpro1348.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url-TVE RS (1080p) [Not 24/7]">
-                <button onclick="copy('TVE RS (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV GUARÁ (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8" id="url--8200233095009635444" readonly>
+                <button onclick="copy('url--8200233095009635444')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVE RS (1080p)</strong><br><br>
-                <input type="text" value="http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url-TVE RS (1080p)">
-                <button onclick="copy('TVE RS (1080p)')">COPIAR IP</button>
+                <strong>TV INTERLAGOS (360P)</strong>
+                <input type="text" value="https://v8.ciclano.io:1443/tvinterlagos/_definst_/tvinterlagos/playlist.m3u8" id="url--7549710413204841694" readonly>
+                <button onclick="copy('url--7549710413204841694')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVE RS (1080p)</strong><br><br>
-                <input type="text" value="https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8" id="url-TVE RS (1080p)">
-                <button onclick="copy('TVE RS (1080p)')">COPIAR IP</button>
+                <strong>TV LIBERDADE (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://srv1.paineldevideo.com/liberdaderadioetv/liberdaderadioetv/playlist.m3u8" id="url--5242496691973052339" readonly>
+                <button onclick="copy('url--5242496691973052339')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVídeoNews (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8" id="url-TVídeoNews (720p) [Not 24/7]">
-                <button onclick="copy('TVídeoNews (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TV LIFE AMERICA (720P)</strong>
+                <input type="text" value="https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8" id="url--2761940632113021082" readonly>
+                <button onclick="copy('url--2761940632113021082')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVitapé (720p)</strong><br><br>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8" id="url-TVitapé (720p)">
-                <button onclick="copy('TVitapé (720p)')">COPIAR IP</button>
+                <strong>TV MACKENZIE (480P)</strong>
+                <input type="text" value="https://player.internetaovivo.com:8443/live_tvmackenzieabr/tvmackenzieabr/playlist.m3u8" id="url-745796015515998272" readonly>
+                <button onclick="copy('url-745796015515998272')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic Comedy (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/comedy.m3u8" id="url-TVMatic Comedy (720p)">
-                <button onclick="copy('TVMatic Comedy (720p)')">COPIAR IP</button>
+                <strong>TV MAIS MARICÁ (1080P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8" id="url-7678631440409674263" readonly>
+                <button onclick="copy('url-7678631440409674263')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic Crafts (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/crafts.m3u8" id="url-TVMatic Crafts (720p)">
-                <button onclick="copy('TVMatic Crafts (720p)')">COPIAR IP</button>
+                <strong>TV MARAJOARA (720P)</strong>
+                <input type="text" value="https://tv02.zas.media:1936/tvmarajoara/tvmarajoara/playlist.m3u8" id="url-4794456765012899128" readonly>
+                <button onclick="copy('url-4794456765012899128')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic Facebook (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/facebook.m3u8" id="url-TVMatic Facebook (720p)">
-                <button onclick="copy('TVMatic Facebook (720p)')">COPIAR IP</button>
+                <strong>TV MAX (720P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmax/tvmax/playlist.m3u8" id="url-4739519971385283312" readonly>
+                <button onclick="copy('url-4739519971385283312')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic Fight (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/fight.m3u8" id="url-TVMatic Fight (720p)">
-                <button onclick="copy('TVMatic Fight (720p)')">COPIAR IP</button>
+                <strong>TV METROPOLE (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://cdn-fundacao-2110.ciclano.io:1443/fundacao-2110/fundacao-2110/playlist.m3u8" id="url--1392997056131464882" readonly>
+                <button onclick="copy('url--1392997056131464882')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic Funny (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/funny.m3u8" id="url-TVMatic Funny (720p)">
-                <button onclick="copy('TVMatic Funny (720p)')">COPIAR IP</button>
+                <strong>TV MODELO (720P)</strong>
+                <input type="text" value="https://video09.logicahost.com.br/tvmodelo/tvmodelo/playlist.m3u" id="url--5182167537492495655" readonly>
+                <button onclick="copy('url--5182167537492495655')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVMatic TikTok (720p)</strong><br><br>
-                <input type="text" value="http://cdn.tvmatic.net/tiktok.m3u8" id="url-TVMatic TikTok (720p)">
-                <button onclick="copy('TVMatic TikTok (720p)')">COPIAR IP</button>
+                <strong>TV PADRE CICERO (720P)</strong>
+                <input type="text" value="https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8" id="url-2368392977448668365" readonly>
+                <button onclick="copy('url-2368392977448668365')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TVNBN (720p)</strong><br><br>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8" id="url-TVNBN (720p)">
-                <button onclick="copy('TVNBN (720p)')">COPIAR IP</button>
+                <strong>TV PAMPA</strong>
+                <input type="text" value="https://video04.logicahost.com.br/tvpampa/tvpampa/playlist.m3u8" id="url--5628586060629310991" readonly>
+                <button onclick="copy('url--5628586060629310991')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>UMA TV</strong><br><br>
-                <input type="text" value="https://umatv.nuvemplay.live/hls/stream.m3u8" id="url-UMA TV">
-                <button onclick="copy('UMA TV')">COPIAR IP</button>
+                <strong>TV PANTANAL MS (360P) [NOT 24/7]</strong>
+                <input type="text" value="https://5a2b083e9f360.streamlock.net/tvpantanal/tvpantanal.sdp/playlist.m3u8" id="url-4523033851124024487" readonly>
+                <button onclick="copy('url-4523033851124024487')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>UNISUL TV (720p)</strong><br><br>
-                <input type="text" value="https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=" id="url-UNISUL TV (720p)">
-                <button onclick="copy('UNISUL TV (720p)')">COPIAR IP</button>
+                <strong>TV PARAENSE (720P)</strong>
+                <input type="text" value="https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u" id="url-8096950665999027576" readonly>
+                <button onclick="copy('url-8096950665999027576')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>UniTV Porto Alegre (480p)</strong><br><br>
-                <input type="text" value="http://unitvaovivo.ufrgs.br:8080/live.ogg" id="url-UniTV Porto Alegre (480p)">
-                <button onclick="copy('UniTV Porto Alegre (480p)')">COPIAR IP</button>
+                <strong>TV PARANÁ TURISMO (720P) [NOT 24/7]</strong>
+                <input type="text" value="http://200.189.113.201/hls/tve.m3u8" id="url--3642151349204275222" readonly>
+                <button onclick="copy('url--3642151349204275222')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>VRT Channel (720p)</strong><br><br>
-                <input type="text" value="https://sistemavrt.vrtchannel.tv.br:3473/stream/play.m3u8" id="url-VRT Channel (720p)">
-                <button onclick="copy('VRT Channel (720p)')">COPIAR IP</button>
+                <strong>TV PASSO FUNDO (720P)</strong>
+                <input type="text" value="https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8" id="url--3492558351087364414" readonly>
+                <button onclick="copy('url--3492558351087364414')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>VV8 TV (720p)</strong><br><br>
-                <input type="text" value="https://video01.kshost.com.br/seap8272/seap8272/playlist.m3u8" id="url-VV8 TV (720p)">
-                <button onclick="copy('VV8 TV (720p)')">COPIAR IP</button>
+                <strong>TV SANDEGI (360P)</strong>
+                <input type="text" value="https://video01.kshost.com.br/antonio9510/antonio9510/playlist.m3u8" id="url--5069286036866087781" readonly>
+                <button onclick="copy('url--5069286036866087781')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>CazeTV (1080i)</strong><br><br>
-                <input type="text" value="https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8" id="url-CazeTV (1080i)">
-                <button onclick="copy('CazeTV (1080i)')">COPIAR IP</button>
+                <strong>TV SERIES 1 AS PANTERAS (480P)</strong>
+                <input type="text" value="https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8" id="url--2348193616675992216" readonly>
+                <button onclick="copy('url--2348193616675992216')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV Pampa</strong><br><br>
-                <input type="text" value="https://video04.logicahost.com.br/tvpampa/tvpampa/playlist.m3u8" id="url-TV Pampa">
-                <button onclick="copy('TV Pampa')">COPIAR IP</button>
+                <strong>TV SIM CACHOEIRO (720P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8" id="url-7660006984411471716" readonly>
+                <button onclick="copy('url-7660006984411471716')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SBT Cuiaba</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8" id="url-SBT Cuiaba">
-                <button onclick="copy('SBT Cuiaba')">COPIAR IP</button>
+                <strong>TV SIM COLATINA (720P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8132/8132/playlist.m3u8" id="url-6965215429156640699" readonly>
+                <button onclick="copy('url-6965215429156640699')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>NickOnline (720p)</strong><br><br>
-                <input type="text" value="https://x1co.com.br/hls/stream.m3u8" id="url-NickOnline (720p)">
-                <button onclick="copy('NickOnline (720p)')">COPIAR IP</button>
+                <strong>TV SIM SÃO MATEUS (720P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8236/8236/playlist.m3u8" id="url--397710228633233170" readonly>
+                <button onclick="copy('url--397710228633233170')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>NickToons Brasil (480p)</strong><br><br>
-                <input type="text" value="https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8" id="url-NickToons Brasil (480p)">
-                <button onclick="copy('NickToons Brasil (480p)')">COPIAR IP</button>
+                <strong>TV SOL COMUNIDADE (480P) [NOT 24/7]</strong>
+                <input type="text" value="http://streaming03.zas.media:1935/tvsol/tvsol/playlist.m3u8" id="url-6839314905926680498" readonly>
+                <button onclick="copy('url-6839314905926680498')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede TV! Mais</strong><br><br>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8" id="url-Rede TV! Mais">
-                <button onclick="copy('Rede TV! Mais')">COPIAR IP</button>
+                <strong>TV SUL BAHIA (320P)</strong>
+                <input type="text" value="https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8" id="url--1385006440060117459" readonly>
+                <button onclick="copy('url--1385006440060117459')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>RedeTV! Parana</strong><br><br>
-                <input type="text" value="https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8" id="url-RedeTV! Parana">
-                <button onclick="copy('RedeTV! Parana')">COPIAR IP</button>
+                <strong>TV SUL DE MINAS (720P)</strong>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvsuldeminas/tvsuldeminas/playlist.m3u8" id="url-5067124471795252829" readonly>
+                <button onclick="copy('url-5067124471795252829')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SBT Sinop</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8" id="url-SBT Sinop">
-                <button onclick="copy('SBT Sinop')">COPIAR IP</button>
+                <strong>TV SÃO RAIMUNDO (268P)</strong>
+                <input type="text" value="https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8" id="url-4141520636867393678" readonly>
+                <button onclick="copy('url-4141520636867393678')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SBT Rondonopolis</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8" id="url-SBT Rondonopolis">
-                <button onclick="copy('SBT Rondonopolis')">COPIAR IP</button>
+                <strong>TV TERCEIRO ANJO (360P)</strong>
+                <input type="text" value="https://streamer1.streamhost.org/salive/GMI3anjoh/playlist.m3u8" id="url--6551586700747400279" readonly>
+                <button onclick="copy('url--6551586700747400279')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SBT Nova Mutum</strong><br><br>
-                <input type="text" value="https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8" id="url-SBT Nova Mutum">
-                <button onclick="copy('SBT Nova Mutum')">COPIAR IP</button>
+                <strong>TV THATHI (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8" id="url--4375406927090600397" readonly>
+                <button onclick="copy('url--4375406927090600397')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 8</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20021/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 8">
-                <button onclick="copy('Premiere FC 8')">COPIAR IP</button>
+                <strong>TV UFG (720P) [NOT 24/7]</strong>
+                <input type="text" value="http://flash.softhost.com.br:1935/ufg/tvufgweb/playlist.m3u8" id="url--2690328218280085253" readonly>
+                <button onclick="copy('url--2690328218280085253')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 7</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20018/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 7">
-                <button onclick="copy('Premiere FC 7')">COPIAR IP</button>
+                <strong>TV UFOP (1080P)</strong>
+                <input type="text" value="https://app.tvufop.com.br/hls/tvufop.m3u8" id="url-4268437166731432773" readonly>
+                <button onclick="copy('url-4268437166731432773')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 6</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20015/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 6">
-                <button onclick="copy('Premiere FC 6')">COPIAR IP</button>
+                <strong>TV UNIVERSAL (480P)</strong>
+                <input type="text" value="https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8" id="url-6666947301840643578" readonly>
+                <button onclick="copy('url-6666947301840643578')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 5</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20012/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 5">
-                <button onclick="copy('Premiere FC 5')">COPIAR IP</button>
+                <strong>TV VILA REAL (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10841/LVW10841_mT77z9o2cP/playlist.m3u8" id="url-3013416973051449463" readonly>
+                <button onclick="copy('url-3013416973051449463')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 4</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20009/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 4">
-                <button onclick="copy('Premiere FC 4')">COPIAR IP</button>
+                <strong>TV VIÇOSA (480P)</strong>
+                <input type="text" value="http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8" id="url--626626719656806152" readonly>
+                <button onclick="copy('url--626626719656806152')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 3</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 3">
-                <button onclick="copy('Premiere FC 3')">COPIAR IP</button>
+                <strong>TV ZOOM (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9730/LVW9730_LmUwslM8jt/playlist.m3u8" id="url-7645761296722668828" readonly>
+                <button onclick="copy('url-7645761296722668828')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 2</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 2">
-                <button onclick="copy('Premiere FC 2')">COPIAR IP</button>
+                <strong>TVC-RIO</strong>
+                <input type="text" value="https://video05.logicahost.com.br/comunitariario/comunitariario/playlist.m3u8" id="url--8441694917952277597" readonly>
+                <button onclick="copy('url--8441694917952277597')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Premiere FC 1</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/20000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-Premiere FC 1">
-                <button onclick="copy('Premiere FC 1')">COPIAR IP</button>
+                <strong>TVCOM DF (360P)</strong>
+                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=" id="url-5630508642373408360" readonly>
+                <button onclick="copy('url-5630508642373408360')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SporTV 3 (1080p)</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/21006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-SporTV 3 (1080p)">
-                <button onclick="copy('SporTV 3 (1080p)')">COPIAR IP</button>
+                <strong>TVCOM MACEIÓ (480P)</strong>
+                <input type="text" value="https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8" id="url--949671770186111718" readonly>
+                <button onclick="copy('url--949671770186111718')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SporTV 2 (1280p)</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/21003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-SporTV 2 (1280p)">
-                <button onclick="copy('SporTV 2 (1280p)')">COPIAR IP</button>
+                <strong>TVE RS (1080P)</strong>
+                <input type="text" value="http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url--5214523302426323575" readonly>
+                <button onclick="copy('url--5214523302426323575')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SporTV (1280p)</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/21000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-SporTV (1280p)">
-                <button onclick="copy('SporTV (1280p)')">COPIAR IP</button>
+                <strong>TVE RS (1080P)</strong>
+                <input type="text" value="https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8" id="url-5949721816906737723" readonly>
+                <button onclick="copy('url-5949721816906737723')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SporTV 2 Alternativo (720p)</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/19025/video.m3u8" id="url-SporTV 2 Alternativo (720p)">
-                <button onclick="copy('SporTV 2 Alternativo (720p)')">COPIAR IP</button>
+                <strong>TVE RS (1080P) [NOT 24/7]</strong>
+                <input type="text" value="http://selpro1348.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url-7651196543237880180" readonly>
+                <button onclick="copy('url-7651196543237880180')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>SporTV Alternativo (720p)</strong><br><br>
-                <input type="text" value="https://stm.sinalmycn.com/19024/video.m3u8" id="url-SporTV Alternativo (720p)">
-                <button onclick="copy('SporTV Alternativo (720p)')">COPIAR IP</button>
+                <strong>TVITAPÉ (720P)</strong>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8" id="url-1766156288743380073" readonly>
+                <button onclick="copy('url-1766156288743380073')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>NickOnline Spongebob (720p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://lowa8026-cmyk.github.io/Brazil/NickOnlineSpongebob.m3u8" id="url-NickOnline Spongebob (720p) [Not 24/7]">
-                <button onclick="copy('NickOnline Spongebob (720p) [Not 24/7]')">COPIAR IP</button>
+                <strong>TVMATIC COMEDY (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/comedy.m3u8" id="url--6525167437641785362" readonly>
+                <button onclick="copy('url--6525167437641785362')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>NickWeb (720p)</strong><br><br>
-                <input type="text" value="https://vs20.live.opencaster.com/nickelodeonbrasil_68f1743d/index.m3u8" id="url-NickWeb (720p)">
-                <button onclick="copy('NickWeb (720p)')">COPIAR IP</button>
+                <strong>TVMATIC CRAFTS (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/crafts.m3u8" id="url--1629518314813748584" readonly>
+                <button onclick="copy('url--1629518314813748584')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>ge Fast (1080p)</strong><br><br>
-                <input type="text" value="https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8" id="url-ge Fast (1080p)">
-                <button onclick="copy('ge Fast (1080p)')">COPIAR IP</button>
+                <strong>TVMATIC FACEBOOK (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/facebook.m3u8" id="url-3302678268206683110" readonly>
+                <button onclick="copy('url-3302678268206683110')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>ge Fast (1080p)</strong><br><br>
-                <input type="text" value="https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8" id="url-ge Fast (1080p)">
-                <button onclick="copy('ge Fast (1080p)')">COPIAR IP</button>
+                <strong>TVMATIC FIGHT (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/fight.m3u8" id="url-5321000357841776980" readonly>
+                <button onclick="copy('url-5321000357841776980')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TV A Critica</strong><br><br>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8" id="url-TV A Critica">
-                <button onclick="copy('TV A Critica')">COPIAR IP</button>
+                <strong>TVMATIC FUNNY (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/funny.m3u8" id="url--95581541998600454" readonly>
+                <button onclick="copy('url--95581541998600454')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Times Brasil (720p)</strong><br><br>
-                <input type="text" value="https://ssai2-ads.api.leiniao.com/global-adinsertion-api/hls/live/v2/21fdb6dd7491406bba86497a24390a25/playlist.m3u8" id="url-Times Brasil (720p)">
-                <button onclick="copy('Times Brasil (720p)')">COPIAR IP</button>
+                <strong>TVMATIC TIKTOK (720P)</strong>
+                <input type="text" value="http://cdn.tvmatic.net/tiktok.m3u8" id="url-4211024183365614639" readonly>
+                <button onclick="copy('url-4211024183365614639')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Gloob Web [Not 24/7]</strong><br><br>
-                <input type="text" value="https://vs20.live.opencaster.com/globiosat_73a904af/index.m3u8" id="url-Gloob Web [Not 24/7]">
-                <button onclick="copy('Gloob Web [Not 24/7]')">COPIAR IP</button>
+                <strong>TVNBN (720P)</strong>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8" id="url--8224161892515288057" readonly>
+                <button onclick="copy('url--8224161892515288057')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Rede Globo (1080p)</strong><br><br>
-                <input type="text" value="https://cors-proxy.cooks.fyi/http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8" id="url-Rede Globo (1080p)">
-                <button onclick="copy('Rede Globo (1080p)')">COPIAR IP</button>
+                <strong>TVÍDEONEWS (720P) [NOT 24/7]</strong>
+                <input type="text" value="https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8" id="url--2512851003607020060" readonly>
+                <button onclick="copy('url--2512851003607020060')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>TikTok Radio Brasil (1080p)</strong><br><br>
-                <input type="text" value="https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529" id="url-TikTok Radio Brasil (1080p)">
-                <button onclick="copy('TikTok Radio Brasil (1080p)')">COPIAR IP</button>
+                <strong>UMA TV</strong>
+                <input type="text" value="https://umatv.nuvemplay.live/hls/stream.m3u8" id="url-1121581370376101756" readonly>
+                <button onclick="copy('url-1121581370376101756')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>NickOnline Spongebob (1080p) [Not 24/7]</strong><br><br>
-                <input type="text" value="https://spongebobnew.x1co.com.br/hls/stream.m3u8" id="url-NickOnline Spongebob (1080p) [Not 24/7]">
-                <button onclick="copy('NickOnline Spongebob (1080p) [Not 24/7]')">COPIAR IP</button>
+                <strong>UNISUL TV (720P)</strong>
+                <input type="text" value="https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=" id="url-1607854552824991834" readonly>
+                <button onclick="copy('url-1607854552824991834')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>CINDIE TV (1080p)</strong><br><br>
-                <input type="text" value="https://d20xuwbyc4yoag.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-CINDIE/387.m3u8?ads.vf=grWTpG3NQNi" id="url-CINDIE TV (1080p)">
-                <button onclick="copy('CINDIE TV (1080p)')">COPIAR IP</button>
+                <strong>UNITV PORTO ALEGRE (480P)</strong>
+                <input type="text" value="http://unitvaovivo.ufrgs.br:8080/live.ogg" id="url-3612557249096216375" readonly>
+                <button onclick="copy('url-3612557249096216375')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>CINDIE TV (1080p)</strong><br><br>
-                <input type="text" value="https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8" id="url-CINDIE TV (1080p)">
-                <button onclick="copy('CINDIE TV (1080p)')">COPIAR IP</button>
+                <strong>VRT CHANNEL (720P)</strong>
+                <input type="text" value="https://sistemavrt.vrtchannel.tv.br:3473/stream/play.m3u8" id="url--8979319238020546477" readonly>
+                <button onclick="copy('url--8979319238020546477')">COPIAR URL</button>
             </div>
         
             <div class="card">
-                <strong>Play TV (720p)</strong><br><br>
-                <input type="text" value="https://isaocorp.cloudecast.com/playtv/index.m3u8" id="url-Play TV (720p)">
-                <button onclick="copy('Play TV (720p)')">COPIAR IP</button>
+                <strong>VV8 TV (720P)</strong>
+                <input type="text" value="https://video01.kshost.com.br/seap8272/seap8272/playlist.m3u8" id="url-2443927883962480219" readonly>
+                <button onclick="copy('url-2443927883962480219')">COPIAR URL</button>
             </div>
         
         </div>
         <script>
             function copy(id) {
-                var btn = document.getElementById('url-' + id);
+                var btn = document.getElementById(id);
                 btn.select();
                 document.execCommand("copy");
-                alert("IP Copiado para o PHflix!");
+                alert("URL copiada!");
             }
         </script>
     </body>
