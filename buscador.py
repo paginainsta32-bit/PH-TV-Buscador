@@ -8,6 +8,8 @@ def buscar_links():
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/br.m3u",
         "https://raw.githubusercontent.com/GuikiAnimes/Canal-Aberto-Brasil/main/CanalAbertoBrasil.m3u",
         "https://raw.githubusercontent.com/LITUATUI/IPTV/main/BR.m3u"
+        "https://raw.githubusercontent.com/HelmerLousas/m3u-br/main/br.m3u", # Mais canais BR
+        "https://raw.githubusercontent.com/Telesv/Documentarios/main/documentarios.m3u" # Documentários variados
     ]
     
     canais_encontrados = []
