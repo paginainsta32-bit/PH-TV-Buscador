@@ -3,1302 +3,1328 @@
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>PH-TV MUNIÇÃO V3</title>
+        <title>PH-TV MUNIÇÃO V4</title>
         <style>
-            body { background: #0a0a0a; color: #00ff41; font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
-            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+            body { background: #0a0a0a; color: #00ff41; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+            .header-sticky { position: sticky; top: 0; background: #0a0a0a; padding: 10px 0; z-index: 100; border-bottom: 1px solid #333; }
+            #searchBar { 
+                width: 100%; padding: 15px; font-size: 18px; border-radius: 8px; 
+                border: 2px solid #00ff41; background: #111; color: #00ff41; outline: none;
+                margin-bottom: 20px; box-sizing: border-box;
+            }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }
             .card { background: #161616; border: 1px solid #333; padding: 15px; border-radius: 8px; transition: 0.3s; }
-            .card:hover { border-color: #00ff41; box-shadow: 0 0 10px #00ff4133; }
-            input { width: 100%; background: #000; color: #0f8; border: 1px solid #444; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 12px; }
+            .card:hover { border-color: #00ff41; }
+            input.url-input { width: 100%; background: #000; color: #0f8; border: 1px solid #444; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 11px; }
             button { background: #00ff41; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; }
-            h1 { color: #fff; text-align: center; margin-bottom: 5px; }
-            .stats { text-align: center; color: #888; margin-bottom: 30px; }
+            .hidden { display: none !important; }
+            h1 { text-align: center; margin: 0; color: #fff; }
+            .stats { text-align: center; color: #888; font-size: 14px; margin-bottom: 10px; }
         </style>
     </head>
     <body>
-        <h1>🔍 PAINEL DE MUNIÇÃO PH-TV</h1>
-        <div class="stats">Canais Online: 212 | Atualizado: 08/05/2026 02:26:35</div>
-        <div class="grid">
+        <div class="header-sticky">
+            <h1>🔍 PH-TV FINDER</h1>
+            <div class="stats">Canais: 212 | Atualizado: 08/05/2026 02:34:13</div>
+            <input type="text" id="searchBar" placeholder="Pesquisar canal (ex: Globo, SBT, Record...)" onkeyup="filterChannels()">
+        </div>
+
+        <div class="grid" id="channelGrid">
     
-            <div class="card">
+            <div class="card" data-name="1001 NOITES (720P) [NOT 24/7]">
                 <strong>1001 NOITES (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8" id="url-9048280514104813667" readonly>
-                <button onclick="copy('url-9048280514104813667')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8" id="id--8011585071943146776" class="url-input" readonly>
+                <button onclick="copy('id--8011585071943146776')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="ADESSO TV (720P)">
                 <strong>ADESSO TV (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8" id="url--6156771490621551546" readonly>
-                <button onclick="copy('url--6156771490621551546')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8" id="id-5776174993062773643" class="url-input" readonly>
+                <button onclick="copy('id-5776174993062773643')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="AGROBRASIL TV (720P) [NOT 24/7]">
                 <strong>AGROBRASIL TV (720P) [NOT 24/7]</strong>
-                <input type="text" value="http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url-3283018588564397186" readonly>
-                <button onclick="copy('url-3283018588564397186')">COPIAR URL</button>
+                <input type="text" value="http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="id--8530739902551366375" class="url-input" readonly>
+                <button onclick="copy('id--8530739902551366375')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="AGROBRASIL TV (720P) [NOT 24/7]">
                 <strong>AGROBRASIL TV (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="url--3891108816079798575" readonly>
-                <button onclick="copy('url--3891108816079798575')">COPIAR URL</button>
+                <input type="text" value="https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8" id="id--3518949993811570622" class="url-input" readonly>
+                <button onclick="copy('id--3518949993811570622')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="ALPHA CHANNEL (720P)">
                 <strong>ALPHA CHANNEL (720P)</strong>
-                <input type="text" value="https://5b01a3d32b65c.streamlock.net:1936/tvalpha/tvalpha/playlist.m3u8" id="url--8728335413964349032" readonly>
-                <button onclick="copy('url--8728335413964349032')">COPIAR URL</button>
+                <input type="text" value="https://5b01a3d32b65c.streamlock.net:1936/tvalpha/tvalpha/playlist.m3u8" id="id--81723793249839558" class="url-input" readonly>
+                <button onclick="copy('id--81723793249839558')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="AMAZON SAT (1080P)">
                 <strong>AMAZON SAT (1080P)</strong>
-                <input type="text" value="https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8" id="url--2674208467092934488" readonly>
-                <button onclick="copy('url--2674208467092934488')">COPIAR URL</button>
+                <input type="text" value="https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8" id="id--6913912206182833856" class="url-input" readonly>
+                <button onclick="copy('id--6913912206182833856')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="BDC TV (576P)">
                 <strong>BDC TV (576P)</strong>
-                <input type="text" value="https://video01.kshost.com.br/bdctv/bdctv/playlist.m3u8" id="url-6762935350930393310" readonly>
-                <button onclick="copy('url-6762935350930393310')">COPIAR URL</button>
+                <input type="text" value="https://video01.kshost.com.br/bdctv/bdctv/playlist.m3u8" id="id-6165501337761701023" class="url-input" readonly>
+                <button onclick="copy('id-6165501337761701023')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="BOAS NOVAS (1080P)">
                 <strong>BOAS NOVAS (1080P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8" id="url-2212261588072699606" readonly>
-                <button onclick="copy('url-2212261588072699606')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8" id="id--8746975302584734804" class="url-input" readonly>
+                <button onclick="copy('id--8746975302584734804')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CABO FRIO TV (720P)">
                 <strong>CABO FRIO TV (720P)</strong>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/ararutv/_definst_/ararutv/playlist.m3u8" id="url-5474776402323723731" readonly>
-                <button onclick="copy('url-5474776402323723731')">COPIAR URL</button>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/ararutv/_definst_/ararutv/playlist.m3u8" id="id-6541888663541859926" class="url-input" readonly>
+                <button onclick="copy('id-6541888663541859926')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL 25 JUNDIAÍ (404P) [NOT 24/7]">
                 <strong>CANAL 25 JUNDIAÍ (404P) [NOT 24/7]</strong>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8" id="url--1275488357378308936" readonly>
-                <button onclick="copy('url--1275488357378308936')">COPIAR URL</button>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8" id="id-7809118406864833263" class="url-input" readonly>
+                <button onclick="copy('id-7809118406864833263')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL 38 (720P)">
                 <strong>CANAL 38 (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8" id="url--8134591284216645459" readonly>
-                <button onclick="copy('url--8134591284216645459')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8" id="id-621010760426061964" class="url-input" readonly>
+                <button onclick="copy('id-621010760426061964')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL DO CRIADOR (1080P)">
                 <strong>CANAL DO CRIADOR (1080P)</strong>
-                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canaldocriador.smil/playlist.m3u8" id="url-1195434636293532084" readonly>
-                <button onclick="copy('url-1195434636293532084')">COPIAR URL</button>
+                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canaldocriador.smil/playlist.m3u8" id="id--3106374123076788966" class="url-input" readonly>
+                <button onclick="copy('id--3106374123076788966')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL DO INTER (720P) [NOT 24/7]">
                 <strong>CANAL DO INTER (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://video01.soultv.com.br/internacional/internacional/playlist.m3u8" id="url-434606659285360615" readonly>
-                <button onclick="copy('url-434606659285360615')">COPIAR URL</button>
+                <input type="text" value="https://video01.soultv.com.br/internacional/internacional/playlist.m3u8" id="id--8204215482049489301" class="url-input" readonly>
+                <button onclick="copy('id--8204215482049489301')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL EDUCAÇÃO (720P)">
                 <strong>CANAL EDUCAÇÃO (720P)</strong>
-                <input type="text" value="https://canaleducacao-stream.ebc.com.br/index.m3u8" id="url-7054135004109953223" readonly>
-                <button onclick="copy('url-7054135004109953223')">COPIAR URL</button>
+                <input type="text" value="https://canaleducacao-stream.ebc.com.br/index.m3u8" id="id--2643057839291400240" class="url-input" readonly>
+                <button onclick="copy('id--2643057839291400240')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL GOV (720P)">
                 <strong>CANAL GOV (720P)</strong>
-                <input type="text" value="https://canalgov-stream.ebc.com.br/index.m3u8" id="url--4660613789350520492" readonly>
-                <button onclick="copy('url--4660613789350520492')">COPIAR URL</button>
+                <input type="text" value="https://canalgov-stream.ebc.com.br/index.m3u8" id="id--8035643621417862361" class="url-input" readonly>
+                <button onclick="copy('id--8035643621417862361')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL LIBRAS (720P)">
                 <strong>CANAL LIBRAS (720P)</strong>
-                <input type="text" value="https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8" id="url--2369408351890075607" readonly>
-                <button onclick="copy('url--2369408351890075607')">COPIAR URL</button>
+                <input type="text" value="https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8" id="id-3759711445354791286" class="url-input" readonly>
+                <button onclick="copy('id-3759711445354791286')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL RICOS (480P)">
                 <strong>CANAL RICOS (480P)</strong>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/ricostv/ricostv/playlist.m3u8" id="url-6736134335401478127" readonly>
-                <button onclick="copy('url-6736134335401478127')">COPIAR URL</button>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/ricostv/ricostv/playlist.m3u8" id="id-3646253964932379027" class="url-input" readonly>
+                <button onclick="copy('id-3646253964932379027')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL RURAL (1080P)">
                 <strong>CANAL RURAL (1080P)</strong>
-                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canalrural.smil/playlist.m3u8" id="url--7174678605882610726" readonly>
-                <button onclick="copy('url--7174678605882610726')">COPIAR URL</button>
+                <input type="text" value="https://607d2a1a47b1f.streamlock.net/crur/smil:canalrural.smil/playlist.m3u8" id="id--6437584593535027371" class="url-input" readonly>
+                <button onclick="copy('id--6437584593535027371')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CANAL SAÚDE (720P) [NOT 24/7]">
                 <strong>CANAL SAÚDE (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://arkyvbre1g.zoeweb.tv/fiocruz/fiocruz.stream/playlist.m3u8" id="url-6574447795951630727" readonly>
-                <button onclick="copy('url-6574447795951630727')">COPIAR URL</button>
+                <input type="text" value="https://arkyvbre1g.zoeweb.tv/fiocruz/fiocruz.stream/playlist.m3u8" id="id-1660083466897849395" class="url-input" readonly>
+                <button onclick="copy('id-1660083466897849395')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CATVE FM (720P) [NOT 24/7]">
                 <strong>CATVE FM (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8" id="url--2748241801461444240" readonly>
-                <button onclick="copy('url--2748241801461444240')">COPIAR URL</button>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8" id="id--4525135678082970599" class="url-input" readonly>
+                <button onclick="copy('id--4525135678082970599')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CATVE MASTER TV (720P) [NOT 24/7]">
                 <strong>CATVE MASTER TV (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8" id="url--3933924015356001223" readonly>
-                <button onclick="copy('url--3933924015356001223')">COPIAR URL</button>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8" id="id-7057759927584571432" class="url-input" readonly>
+                <button onclick="copy('id-7057759927584571432')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CATVE2 (720P)">
                 <strong>CATVE2 (720P)</strong>
-                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8" id="url--4640858609639408965" readonly>
-                <button onclick="copy('url--4640858609639408965')">COPIAR URL</button>
+                <input type="text" value="https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8" id="id-6926246082294133903" class="url-input" readonly>
+                <button onclick="copy('id-6926246082294133903')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CAZETV (1080I)">
                 <strong>CAZETV (1080I)</strong>
-                <input type="text" value="https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8" id="url-5903725309688226319" readonly>
-                <button onclick="copy('url-5903725309688226319')">COPIAR URL</button>
+                <input type="text" value="https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8" id="id--4413231507514787450" class="url-input" readonly>
+                <button onclick="copy('id--4413231507514787450')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CHROMA TV (480P)">
                 <strong>CHROMA TV (480P)</strong>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/8054/8054/playlist.m3u8" id="url--3754329440135705179" readonly>
-                <button onclick="copy('url--3754329440135705179')">COPIAR URL</button>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/8054/8054/playlist.m3u8" id="id-1722692073246297357" class="url-input" readonly>
+                <button onclick="copy('id-1722692073246297357')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CINDIE TV (1080P)">
                 <strong>CINDIE TV (1080P)</strong>
-                <input type="text" value="https://d20xuwbyc4yoag.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-CINDIE/387.m3u8?ads.vf=grWTpG3NQNi" id="url--5679988462139277023" readonly>
-                <button onclick="copy('url--5679988462139277023')">COPIAR URL</button>
+                <input type="text" value="https://d20xuwbyc4yoag.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-CINDIE/387.m3u8?ads.vf=grWTpG3NQNi" id="id--8107511918780640736" class="url-input" readonly>
+                <button onclick="copy('id--8107511918780640736')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CINDIE TV (1080P)">
                 <strong>CINDIE TV (1080P)</strong>
-                <input type="text" value="https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8" id="url-4209785196791837075" readonly>
-                <button onclick="copy('url-4209785196791837075')">COPIAR URL</button>
+                <input type="text" value="https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8" id="id--2171981656115219448" class="url-input" readonly>
+                <button onclick="copy('id--2171981656115219448')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CLASSIQUE TV (360P)">
                 <strong>CLASSIQUE TV (360P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/classique/classique/playlist.m3u8" id="url-5137254581871952504" readonly>
-                <button onclick="copy('url-5137254581871952504')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/classique/classique/playlist.m3u8" id="id--3402684724228325141" class="url-input" readonly>
+                <button onclick="copy('id--3402684724228325141')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="COM BRASIL (1080P) [NOT 24/7]">
                 <strong>COM BRASIL (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8" id="url-2231768909182601416" readonly>
-                <button onclick="copy('url-2231768909182601416')">COPIAR URL</button>
+                <input type="text" value="https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8" id="id--2094420673808214308" class="url-input" readonly>
+                <button onclick="copy('id--2094420673808214308')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CONECTA+ TV (720P)">
                 <strong>CONECTA+ TV (720P)</strong>
-                <input type="text" value="http://189.14.239.62:1935/webtv/livestream1/playlist.m3u8" id="url-690511978700991902" readonly>
-                <button onclick="copy('url-690511978700991902')">COPIAR URL</button>
+                <input type="text" value="http://189.14.239.62:1935/webtv/livestream1/playlist.m3u8" id="id--4406604766781436409" class="url-input" readonly>
+                <button onclick="copy('id--4406604766781436409')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CONECTV BRASIL (720P)">
                 <strong>CONECTV BRASIL (720P)</strong>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8" id="url-7391962801958534565" readonly>
-                <button onclick="copy('url-7391962801958534565')">COPIAR URL</button>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8" id="id-5913591557766742762" class="url-input" readonly>
+                <button onclick="copy('id-5913591557766742762')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CONEXÃO TV (720P)">
                 <strong>CONEXÃO TV (720P)</strong>
-                <input type="text" value="https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8" id="url--8268608246816552967" readonly>
-                <button onclick="copy('url--8268608246816552967')">COPIAR URL</button>
+                <input type="text" value="https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8" id="id--4682238362468291547" class="url-input" readonly>
+                <button onclick="copy('id--4682238362468291547')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CULTURA PARÁ (480P) [NOT 24/7]">
                 <strong>CULTURA PARÁ (480P) [NOT 24/7]</strong>
-                <input type="text" value="http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8" id="url-3682935632441106339" readonly>
-                <button onclick="copy('url-3682935632441106339')">COPIAR URL</button>
+                <input type="text" value="http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8" id="id--4332973469255916902" class="url-input" readonly>
+                <button onclick="copy('id--4332973469255916902')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="CWB TV (720P)">
                 <strong>CWB TV (720P)</strong>
-                <input type="text" value="https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8" id="url-8741955801157557792" readonly>
-                <button onclick="copy('url-8741955801157557792')">COPIAR URL</button>
+                <input type="text" value="https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8" id="id-8866085324057588348" class="url-input" readonly>
+                <button onclick="copy('id-8866085324057588348')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="DEMAIS TV (720P)">
                 <strong>DEMAIS TV (720P)</strong>
-                <input type="text" value="https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8" id="url--6377746137785547897" readonly>
-                <button onclick="copy('url--6377746137785547897')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8" id="id-1774738386548393344" class="url-input" readonly>
+                <button onclick="copy('id-1774738386548393344')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="DESPERTAR TV (720P)">
                 <strong>DESPERTAR TV (720P)</strong>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8" id="url--6942383688397565018" readonly>
-                <button onclick="copy('url--6942383688397565018')">COPIAR URL</button>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/pejexypz/playlist/playlist.m3u8" id="id-5766200487568288" class="url-input" readonly>
+                <button onclick="copy('id-5766200487568288')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="ELEMENTAL CHANNEL (1080P)">
                 <strong>ELEMENTAL CHANNEL (1080P)</strong>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/8116/8116/playlist.m3u8" id="url--5854389433814286468" readonly>
-                <button onclick="copy('url--5854389433814286468')">COPIAR URL</button>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/8116/8116/playlist.m3u8" id="id--8927603962953620034" class="url-input" readonly>
+                <button onclick="copy('id--8927603962953620034')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="ELYTV (360P)">
                 <strong>ELYTV (360P)</strong>
-                <input type="text" value="https://stmv1.srvsite.com/ely/ely/playlist.m3u8" id="url--7462502211711965338" readonly>
-                <button onclick="copy('url--7462502211711965338')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvsite.com/ely/ely/playlist.m3u8" id="id-7034304754189634492" class="url-input" readonly>
+                <button onclick="copy('id-7034304754189634492')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="EUTV (720P)">
                 <strong>EUTV (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8" id="url--493777246752013408" readonly>
-                <button onclick="copy('url--493777246752013408')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8" id="id-574158938442642701" class="url-input" readonly>
+                <button onclick="copy('id-574158938442642701')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="FALA LITORAL (480P)">
                 <strong>FALA LITORAL (480P)</strong>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8" id="url-3938916545784481028" readonly>
-                <button onclick="copy('url-3938916545784481028')">COPIAR URL</button>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8" id="id--746399576450046719" class="url-input" readonly>
+                <button onclick="copy('id--746399576450046719')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="FONTE TV (1080P) [NOT 24/7]">
                 <strong>FONTE TV (1080P) [NOT 24/7]</strong>
-                <input type="text" value="http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8" id="url--6357619648479179616" readonly>
-                <button onclick="copy('url--6357619648479179616')">COPIAR URL</button>
+                <input type="text" value="http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8" id="id--149737023994733310" class="url-input" readonly>
+                <button onclick="copy('id--149737023994733310')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GE FAST (1080P)">
                 <strong>GE FAST (1080P)</strong>
-                <input type="text" value="https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8" id="url--8682475215405396189" readonly>
-                <button onclick="copy('url--8682475215405396189')">COPIAR URL</button>
+                <input type="text" value="https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8" id="id--88321129004282527" class="url-input" readonly>
+                <button onclick="copy('id--88321129004282527')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GE FAST (1080P)">
                 <strong>GE FAST (1080P)</strong>
-                <input type="text" value="https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8" id="url-3597217684436884755" readonly>
-                <button onclick="copy('url-3597217684436884755')">COPIAR URL</button>
+                <input type="text" value="https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8" id="id--248168659482224491" class="url-input" readonly>
+                <button onclick="copy('id--248168659482224491')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GEEKDOT (720P)">
                 <strong>GEEKDOT (720P)</strong>
-                <input type="text" value="https://stream.ichibantv.com:3764/hybrid/play.m3u8" id="url-7695609378405660632" readonly>
-                <button onclick="copy('url-7695609378405660632')">COPIAR URL</button>
+                <input type="text" value="https://stream.ichibantv.com:3764/hybrid/play.m3u8" id="id-6225686350431445424" class="url-input" readonly>
+                <button onclick="copy('id-6225686350431445424')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GHOST TV (712P) [NOT 24/7]">
                 <strong>GHOST TV (712P) [NOT 24/7]</strong>
-                <input type="text" value="https://stmv.video.expressolider.com.br/ghostv/ghostv/playlist.m3u8" id="url--4595429623490041263" readonly>
-                <button onclick="copy('url--4595429623490041263')">COPIAR URL</button>
+                <input type="text" value="https://stmv.video.expressolider.com.br/ghostv/ghostv/playlist.m3u8" id="id--363804110921013253" class="url-input" readonly>
+                <button onclick="copy('id--363804110921013253')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GLOOB">
                 <strong>GLOOB</strong>
-                <input type="text" value="http://79.127.243.211:14436/_.m3u8" id="url--5739721579334839250" readonly>
-                <button onclick="copy('url--5739721579334839250')">COPIAR URL</button>
+                <input type="text" value="http://79.127.243.211:14436/_.m3u8" id="id-6952052351553830062" class="url-input" readonly>
+                <button onclick="copy('id-6952052351553830062')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GLOOB (576P)">
                 <strong>GLOOB (576P)</strong>
-                <input type="text" value="http://45.235.0.78/Gloob/playlist.m3u8" id="url-4931166546030588936" readonly>
-                <button onclick="copy('url-4931166546030588936')">COPIAR URL</button>
+                <input type="text" value="http://45.235.0.78/Gloob/playlist.m3u8" id="id--3571647137867625973" class="url-input" readonly>
+                <button onclick="copy('id--3571647137867625973')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GLOOB WEB [NOT 24/7]">
                 <strong>GLOOB WEB [NOT 24/7]</strong>
-                <input type="text" value="https://vs20.live.opencaster.com/globiosat_73a904af/index.m3u8" id="url-1803907703797402768" readonly>
-                <button onclick="copy('url-1803907703797402768')">COPIAR URL</button>
+                <input type="text" value="https://vs20.live.opencaster.com/globiosat_73a904af/index.m3u8" id="id--281646452240909283" class="url-input" readonly>
+                <button onclick="copy('id--281646452240909283')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GOSPEL CARTOON (360P)">
                 <strong>GOSPEL CARTOON (360P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8" id="url--4020273409366302997" readonly>
-                <button onclick="copy('url--4020273409366302997')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8" id="id--1753803195249140692" class="url-input" readonly>
+                <button onclick="copy('id--1753803195249140692')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="GOSPEL MOVIE TV (360P)">
                 <strong>GOSPEL MOVIE TV (360P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/gospelf/gospelf/playlist.m3u8" id="url-300466477596337017" readonly>
-                <button onclick="copy('url-300466477596337017')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/gospelf/gospelf/playlist.m3u8" id="id-3077697794515755372" class="url-input" readonly>
+                <button onclick="copy('id-3077697794515755372')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="ISTV (720P) [NOT 24/7]">
                 <strong>ISTV (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://stmv1.srvstm.com/sistema7933/sistema7933/playlist.m3u8" id="url-56223553850234579" readonly>
-                <button onclick="copy('url-56223553850234579')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvstm.com/sistema7933/sistema7933/playlist.m3u8" id="id-7447106805985891146" class="url-input" readonly>
+                <button onclick="copy('id-7447106805985891146')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="JOVEM PAN NEWS (JP NEWS) (1080P) [NOT 24/7]">
                 <strong>JOVEM PAN NEWS (JP NEWS) (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/index.m3u8" id="url--8766958694276814546" readonly>
-                <button onclick="copy('url--8766958694276814546')">COPIAR URL</button>
+                <input type="text" value="https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/index.m3u8" id="id--1947448674847571241" class="url-input" readonly>
+                <button onclick="copy('id--1947448674847571241')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="KPOPTV PLAY (576P)">
                 <strong>KPOPTV PLAY (576P)</strong>
-                <input type="text" value="https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8" id="url-3766372981859768023" readonly>
-                <button onclick="copy('url-3766372981859768023')">COPIAR URL</button>
+                <input type="text" value="https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8" id="id-376624183200248319" class="url-input" readonly>
+                <button onclick="copy('id-376624183200248319')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="KURIAKOS CINE (1080P)">
                 <strong>KURIAKOS CINE (1080P)</strong>
-                <input type="text" value="https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8" id="url-8145478946612995083" readonly>
-                <button onclick="copy('url-8145478946612995083')">COPIAR URL</button>
+                <input type="text" value="https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8" id="id--5280161868150420174" class="url-input" readonly>
+                <button onclick="copy('id--5280161868150420174')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="KURIAKOS KIDS (1080P)">
                 <strong>KURIAKOS KIDS (1080P)</strong>
-                <input type="text" value="https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8" id="url--8518512476386692884" readonly>
-                <button onclick="copy('url--8518512476386692884')">COPIAR URL</button>
+                <input type="text" value="https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8" id="id-2252700156221360652" class="url-input" readonly>
+                <button onclick="copy('id-2252700156221360652')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="LOADING (720P)">
                 <strong>LOADING (720P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8" id="url--8908393275605704545" readonly>
-                <button onclick="copy('url--8908393275605704545')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8" id="id-456558710074626339" class="url-input" readonly>
+                <button onclick="copy('id-456558710074626339')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="MKK WEB TV (720P) [NOT 24/7]">
                 <strong>MKK WEB TV (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8" id="url-4936831977547902623" readonly>
-                <button onclick="copy('url-4936831977547902623')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8" id="id--5574520868530644608" class="url-input" readonly>
+                <button onclick="copy('id--5574520868530644608')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NICKONLINE (720P)">
                 <strong>NICKONLINE (720P)</strong>
-                <input type="text" value="https://x1co.com.br/hls/stream.m3u8" id="url--8761007354144734138" readonly>
-                <button onclick="copy('url--8761007354144734138')">COPIAR URL</button>
+                <input type="text" value="https://x1co.com.br/hls/stream.m3u8" id="id-4026701159025087224" class="url-input" readonly>
+                <button onclick="copy('id-4026701159025087224')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NICKONLINE SPONGEBOB (1080P) [NOT 24/7]">
                 <strong>NICKONLINE SPONGEBOB (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://spongebobnew.x1co.com.br/hls/stream.m3u8" id="url--1734380116935894182" readonly>
-                <button onclick="copy('url--1734380116935894182')">COPIAR URL</button>
+                <input type="text" value="https://spongebobnew.x1co.com.br/hls/stream.m3u8" id="id--7163817358657833795" class="url-input" readonly>
+                <button onclick="copy('id--7163817358657833795')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NICKONLINE SPONGEBOB (720P) [NOT 24/7]">
                 <strong>NICKONLINE SPONGEBOB (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://lowa8026-cmyk.github.io/Brazil/NickOnlineSpongebob.m3u8" id="url-7364116625446236464" readonly>
-                <button onclick="copy('url-7364116625446236464')">COPIAR URL</button>
+                <input type="text" value="https://lowa8026-cmyk.github.io/Brazil/NickOnlineSpongebob.m3u8" id="id--8545051946964178904" class="url-input" readonly>
+                <button onclick="copy('id--8545051946964178904')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NICKTOONS BRASIL (480P)">
                 <strong>NICKTOONS BRASIL (480P)</strong>
-                <input type="text" value="https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8" id="url--310215294289850003" readonly>
-                <button onclick="copy('url--310215294289850003')">COPIAR URL</button>
+                <input type="text" value="https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8" id="id-1387660763829626659" class="url-input" readonly>
+                <button onclick="copy('id-1387660763829626659')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NICKWEB (720P)">
                 <strong>NICKWEB (720P)</strong>
-                <input type="text" value="https://vs20.live.opencaster.com/nickelodeonbrasil_68f1743d/index.m3u8" id="url--1060577931697171490" readonly>
-                <button onclick="copy('url--1060577931697171490')">COPIAR URL</button>
+                <input type="text" value="https://vs20.live.opencaster.com/nickelodeonbrasil_68f1743d/index.m3u8" id="id-4285366669069526652" class="url-input" readonly>
+                <button onclick="copy('id-4285366669069526652')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NOVA ERA TV (1080P) [NOT 24/7]">
                 <strong>NOVA ERA TV (1080P) [NOT 24/7]</strong>
-                <input type="text" value="http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8" id="url-3276387743111093158" readonly>
-                <button onclick="copy('url-3276387743111093158')">COPIAR URL</button>
+                <input type="text" value="http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8" id="id-3744748962866230825" class="url-input" readonly>
+                <button onclick="copy('id-3744748962866230825')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NOVO TEMPO (720P)">
                 <strong>NOVO TEMPO (720P)</strong>
-                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnovotempo.smil/playlist.m3u8" id="url-3697527132118374076" readonly>
-                <button onclick="copy('url-3697527132118374076')">COPIAR URL</button>
+                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnovotempo.smil/playlist.m3u8" id="id--5554525217930523987" class="url-input" readonly>
+                <button onclick="copy('id--5554525217930523987')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="NUEVO TIEMPO (720P) [NOT 24/7]">
                 <strong>NUEVO TIEMPO (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnuevotiempo.smil/playlist.m3u8" id="url-7892420457487376603" readonly>
-                <button onclick="copy('url-7892420457487376603')">COPIAR URL</button>
+                <input type="text" value="https://stream.live.novotempo.com/tv/smil:tvnuevotiempo.smil/playlist.m3u8" id="id-4024567868813728160" class="url-input" readonly>
+                <button onclick="copy('id-4024567868813728160')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PLAY TV (720P)">
                 <strong>PLAY TV (720P)</strong>
-                <input type="text" value="https://isaocorp.cloudecast.com/playtv/index.m3u8" id="url--4104493199676779754" readonly>
-                <button onclick="copy('url--4104493199676779754')">COPIAR URL</button>
+                <input type="text" value="https://isaocorp.cloudecast.com/playtv/index.m3u8" id="id-8039558283115191333" class="url-input" readonly>
+                <button onclick="copy('id-8039558283115191333')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PLENA TV (720P)">
                 <strong>PLENA TV (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9591/LVW9591_PmXtgATnaS/playlist.m3u8" id="url--1878561086209193423" readonly>
-                <button onclick="copy('url--1878561086209193423')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9591/LVW9591_PmXtgATnaS/playlist.m3u8" id="id--5893018863254455680" class="url-input" readonly>
+                <button onclick="copy('id--5893018863254455680')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 1">
                 <strong>PREMIERE FC 1</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6599242899504160891" readonly>
-                <button onclick="copy('url-6599242899504160891')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--1956355571486231167" class="url-input" readonly>
+                <button onclick="copy('id--1956355571486231167')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 2">
                 <strong>PREMIERE FC 2</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6261888067090331180" readonly>
-                <button onclick="copy('url-6261888067090331180')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--7336055586231770622" class="url-input" readonly>
+                <button onclick="copy('id--7336055586231770622')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 3">
                 <strong>PREMIERE FC 3</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--7376461772735424895" readonly>
-                <button onclick="copy('url--7376461772735424895')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--5529430575407540127" class="url-input" readonly>
+                <button onclick="copy('id--5529430575407540127')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 4">
                 <strong>PREMIERE FC 4</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20009/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-685330693484106665" readonly>
-                <button onclick="copy('url-685330693484106665')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20009/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id-7918105837240217368" class="url-input" readonly>
+                <button onclick="copy('id-7918105837240217368')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 5">
                 <strong>PREMIERE FC 5</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20012/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--4780138121575759955" readonly>
-                <button onclick="copy('url--4780138121575759955')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20012/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id-4636843163920505567" class="url-input" readonly>
+                <button onclick="copy('id-4636843163920505567')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 6">
                 <strong>PREMIERE FC 6</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20015/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--3168860891729268503" readonly>
-                <button onclick="copy('url--3168860891729268503')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20015/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--4166664489089580872" class="url-input" readonly>
+                <button onclick="copy('id--4166664489089580872')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 7">
                 <strong>PREMIERE FC 7</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20018/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-4333849642483422585" readonly>
-                <button onclick="copy('url-4333849642483422585')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20018/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id-8647374012169409997" class="url-input" readonly>
+                <button onclick="copy('id-8647374012169409997')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PREMIERE FC 8">
                 <strong>PREMIERE FC 8</strong>
-                <input type="text" value="https://stm.sinalmycn.com/20021/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-6455442846756110220" readonly>
-                <button onclick="copy('url-6455442846756110220')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/20021/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--8625555419321221460" class="url-input" readonly>
+                <button onclick="copy('id--8625555419321221460')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="PRIMER TV (1080P)">
                 <strong>PRIMER TV (1080P)</strong>
-                <input type="text" value="http://200.194.238.229:8383/live/primer/playlist.m3u8" id="url--6499750956480612230" readonly>
-                <button onclick="copy('url--6499750956480612230')">COPIAR URL</button>
+                <input type="text" value="http://200.194.238.229:8383/live/primer/playlist.m3u8" id="id--9064108422353811419" class="url-input" readonly>
+                <button onclick="copy('id--9064108422353811419')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RBATV (720P)">
                 <strong>RBATV (720P)</strong>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8" id="url-2747227470100982579" readonly>
-                <button onclick="copy('url-2747227470100982579')">COPIAR URL</button>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8" id="id--2426954334698301160" class="url-input" readonly>
+                <button onclick="copy('id--2426954334698301160')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD NEWS">
                 <strong>RECORD NEWS</strong>
-                <input type="text" value="https://stream.ads.ottera.tv/playlist.m3u8?network_id=2116" id="url-8962215959236633223" readonly>
-                <button onclick="copy('url-8962215959236633223')">COPIAR URL</button>
+                <input type="text" value="https://stream.ads.ottera.tv/playlist.m3u8?network_id=2116" id="id-6824872051278537411" class="url-input" readonly>
+                <button onclick="copy('id-6824872051278537411')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD NEWS (720P)">
                 <strong>RECORD NEWS (720P)</strong>
-                <input type="text" value="https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8" id="url--8556774422519157965" readonly>
-                <button onclick="copy('url--8556774422519157965')">COPIAR URL</button>
+                <input type="text" value="https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8" id="id--7845517111399069105" class="url-input" readonly>
+                <button onclick="copy('id--7845517111399069105')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD NEWS (720P) [GEO-BLOCKED]">
                 <strong>RECORD NEWS (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8" id="url--968115013311385249" readonly>
-                <button onclick="copy('url--968115013311385249')">COPIAR URL</button>
+                <input type="text" value="https://playplusnews-lh.akamaihd.net/i/pp_nws@377849/master.m3u8" id="id-1716647427570915428" class="url-input" readonly>
+                <button onclick="copy('id-1716647427570915428')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV BELEM (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV BELEM (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playpluspa-lh.akamaihd.net/i/pp_pa@377468/index_720_av-p.m3u8" id="url--4940439163571531380" readonly>
-                <button onclick="copy('url--4940439163571531380')">COPIAR URL</button>
+                <input type="text" value="https://playpluspa-lh.akamaihd.net/i/pp_pa@377468/index_720_av-p.m3u8" id="id--8684976515097098516" class="url-input" readonly>
+                <button onclick="copy('id--8684976515097098516')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV BRASILIA (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV BRASILIA (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplusbsa-lh.akamaihd.net/i/pp_bsa@377860/index_720_av-p.m3u8" id="url-2354556782842193342" readonly>
-                <button onclick="copy('url-2354556782842193342')">COPIAR URL</button>
+                <input type="text" value="https://playplusbsa-lh.akamaihd.net/i/pp_bsa@377860/index_720_av-p.m3u8" id="id-2454611634538874427" class="url-input" readonly>
+                <button onclick="copy('id-2454611634538874427')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV GOIAS (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV GOIAS (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplusgoya-lh.akamaihd.net/i/pp_gna@377833/index_720_av-p.m3u8" id="url--2631639850334726801" readonly>
-                <button onclick="copy('url--2631639850334726801')">COPIAR URL</button>
+                <input type="text" value="https://playplusgoya-lh.akamaihd.net/i/pp_gna@377833/index_720_av-p.m3u8" id="id-5938175435481352720" class="url-input" readonly>
+                <button onclick="copy('id-5938175435481352720')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV ITAPOAN (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV ITAPOAN (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplussdr-lh.akamaihd.net/i/pp_sdr@377858/index_720_av-b.m3u8" id="url--1470492403247521563" readonly>
-                <button onclick="copy('url--1470492403247521563')">COPIAR URL</button>
+                <input type="text" value="https://playplussdr-lh.akamaihd.net/i/pp_sdr@377858/index_720_av-b.m3u8" id="id--3160741449461044265" class="url-input" readonly>
+                <button onclick="copy('id--3160741449461044265')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV RIO (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV RIO (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplusrjo-lh.akamaihd.net/i/pp_rj@377859/index_720_av-p.m3u8" id="url--1110665300737469537" readonly>
-                <button onclick="copy('url--1110665300737469537')">COPIAR URL</button>
+                <input type="text" value="https://playplusrjo-lh.akamaihd.net/i/pp_rj@377859/index_720_av-p.m3u8" id="id-8292391841488115626" class="url-input" readonly>
+                <button onclick="copy('id-8292391841488115626')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV RS (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV RS (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playpluspoa-lh.akamaihd.net/i/pp_poa@377864/index_720_av-p.m3u8" id="url-7873949906756419533" readonly>
-                <button onclick="copy('url-7873949906756419533')">COPIAR URL</button>
+                <input type="text" value="https://playpluspoa-lh.akamaihd.net/i/pp_poa@377864/index_720_av-p.m3u8" id="id-2813619742358261053" class="url-input" readonly>
+                <button onclick="copy('id-2813619742358261053')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORD TV SP (720P) [GEO-BLOCKED]">
                 <strong>RECORD TV SP (720P) [GEO-BLOCKED]</strong>
-                <input type="text" value="https://playplusspo-lh.akamaihd.net/i/pp_sp@350176/index_720_av-p.m3u8" id="url--987502892518627941" readonly>
-                <button onclick="copy('url--987502892518627941')">COPIAR URL</button>
+                <input type="text" value="https://playplusspo-lh.akamaihd.net/i/pp_sp@350176/index_720_av-p.m3u8" id="id-1818380548533073122" class="url-input" readonly>
+                <button onclick="copy('id-1818380548533073122')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORDTV">
                 <strong>RECORDTV</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8" id="url-7017266339968236168" readonly>
-                <button onclick="copy('url-7017266339968236168')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8" id="id-7456732661499219463" class="url-input" readonly>
+                <button onclick="copy('id-7456732661499219463')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RECORDTV INTERIOR SP">
                 <strong>RECORDTV INTERIOR SP</strong>
-                <input type="text" value="http://200.77.176.130:8000/udp/224.0.0.4:49152" id="url--7223665204620932507" readonly>
-                <button onclick="copy('url--7223665204620932507')">COPIAR URL</button>
+                <input type="text" value="http://200.77.176.130:8000/udp/224.0.0.4:49152" id="id--454351612791400611" class="url-input" readonly>
+                <button onclick="copy('id--454351612791400611')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE GLOBO (1080P)">
                 <strong>REDE GLOBO (1080P)</strong>
-                <input type="text" value="https://cors-proxy.cooks.fyi/http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8" id="url-6757739825201867408" readonly>
-                <button onclick="copy('url-6757739825201867408')">COPIAR URL</button>
+                <input type="text" value="https://cors-proxy.cooks.fyi/http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8" id="id--1012067781934171091" class="url-input" readonly>
+                <button onclick="copy('id--1012067781934171091')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE GOSPEL (1080P)">
                 <strong>REDE GOSPEL (1080P)</strong>
-                <input type="text" value="https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8" id="url--6707579296118089543" readonly>
-                <button onclick="copy('url--6707579296118089543')">COPIAR URL</button>
+                <input type="text" value="https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8" id="id--8414926996297699459" class="url-input" readonly>
+                <button onclick="copy('id--8414926996297699459')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE MINAS (1080P) [NOT 24/7]">
                 <strong>REDE MINAS (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://v4-slbps-sambavideos.akamaized.net/live/3282,8114,ec4b5a296d97fa99bf990662f5b4f8e1;base64np;Mc8VDxqNjXKCAf8!/amlst:Mc_tFgfGiHOdQXPB/chunklist_.m3u8" id="url--9192650946837611847" readonly>
-                <button onclick="copy('url--9192650946837611847')">COPIAR URL</button>
+                <input type="text" value="https://v4-slbps-sambavideos.akamaized.net/live/3282,8114,ec4b5a296d97fa99bf990662f5b4f8e1;base64np;Mc8VDxqNjXKCAf8!/amlst:Mc_tFgfGiHOdQXPB/chunklist_.m3u8" id="id--182648562724832923" class="url-input" readonly>
+                <button onclick="copy('id--182648562724832923')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE NGT (1080P)">
                 <strong>REDE NGT (1080P)</strong>
-                <input type="text" value="https://isaocorp.cloudecast.com/ngt/index.m3u8" id="url--808494090889284037" readonly>
-                <button onclick="copy('url--808494090889284037')">COPIAR URL</button>
+                <input type="text" value="https://isaocorp.cloudecast.com/ngt/index.m3u8" id="id-7971910107393849444" class="url-input" readonly>
+                <button onclick="copy('id-7971910107393849444')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE RC (720P) [NOT 24/7]">
                 <strong>REDE RC (720P) [NOT 24/7]</strong>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8" id="url--3398274808527340658" readonly>
-                <button onclick="copy('url--3398274808527340658')">COPIAR URL</button>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8" id="id--6373924680686229633" class="url-input" readonly>
+                <button onclick="copy('id--6373924680686229633')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE SPTV (360P)">
                 <strong>REDE SPTV (360P)</strong>
-                <input type="text" value="https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8" id="url--3381001403019102633" readonly>
-                <button onclick="copy('url--3381001403019102633')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8" id="id-2669908816424357373" class="url-input" readonly>
+                <button onclick="copy('id-2669908816424357373')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE TV! ES (1080P)">
                 <strong>REDE TV! ES (1080P)</strong>
-                <input type="text" value="https://streaming.cloudecast.com/hls/redetves/index.m3u8" id="url--3605802406162926337" readonly>
-                <button onclick="copy('url--3605802406162926337')">COPIAR URL</button>
+                <input type="text" value="https://streaming.cloudecast.com/hls/redetves/index.m3u8" id="id-616205668582288868" class="url-input" readonly>
+                <button onclick="copy('id-616205668582288868')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE TV! MAIS">
                 <strong>REDE TV! MAIS</strong>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8" id="url--1863743661007826985" readonly>
-                <button onclick="copy('url--1863743661007826985')">COPIAR URL</button>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8" id="id-8279244596670439846" class="url-input" readonly>
+                <button onclick="copy('id-8279244596670439846')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDE TV! SP (720P) [NOT 24/7]">
                 <strong>REDE TV! SP (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8" id="url-3439816879291154861" readonly>
-                <button onclick="copy('url-3439816879291154861')">COPIAR URL</button>
+                <input type="text" value="https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8" id="id-2736215451337707770" class="url-input" readonly>
+                <button onclick="copy('id-2736215451337707770')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="REDETV! PARANA">
                 <strong>REDETV! PARANA</strong>
-                <input type="text" value="https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8" id="url-3307979237924645555" readonly>
-                <button onclick="copy('url-3307979237924645555')">COPIAR URL</button>
+                <input type="text" value="https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8" id="id--8048547246164542720" class="url-input" readonly>
+                <button onclick="copy('id--8048547246164542720')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="RIT TV (1080P)">
                 <strong>RIT TV (1080P)</strong>
-                <input type="text" value="https://acesso.ecast.site:3648/live/ritlive.m3u8" id="url--3404584517206727465" readonly>
-                <button onclick="copy('url--3404584517206727465')">COPIAR URL</button>
+                <input type="text" value="https://acesso.ecast.site:3648/live/ritlive.m3u8" id="id-1949251387163160797" class="url-input" readonly>
+                <button onclick="copy('id-1949251387163160797')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SANTA CECILIA TV (1080P)">
                 <strong>SANTA CECILIA TV (1080P)</strong>
-                <input type="text" value="https://5fb29de4928ea.streamlock.net/2063/2063/playlist.m3u8" id="url-3738833595575281796" readonly>
-                <button onclick="copy('url-3738833595575281796')">COPIAR URL</button>
+                <input type="text" value="https://5fb29de4928ea.streamlock.net/2063/2063/playlist.m3u8" id="id--5033476363324825899" class="url-input" readonly>
+                <button onclick="copy('id--5033476363324825899')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SANTA CECILIA TV (1080P) [NOT 24/7]">
                 <strong>SANTA CECILIA TV (1080P) [NOT 24/7]</strong>
-                <input type="text" value="http://flash1.crossdigital.com.br/2063/2063/playlist.m3u8" id="url-1314846935391712705" readonly>
-                <button onclick="copy('url-1314846935391712705')">COPIAR URL</button>
+                <input type="text" value="http://flash1.crossdigital.com.br/2063/2063/playlist.m3u8" id="id-4878042888843031213" class="url-input" readonly>
+                <button onclick="copy('id-4878042888843031213')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SBT CUIABA">
                 <strong>SBT CUIABA</strong>
-                <input type="text" value="https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8" id="url-1146663051103857345" readonly>
-                <button onclick="copy('url-1146663051103857345')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8" id="id--7215893241572941193" class="url-input" readonly>
+                <button onclick="copy('id--7215893241572941193')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SBT INTERIOR (720P)">
                 <strong>SBT INTERIOR (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8" id="url--1694607539113579665" readonly>
-                <button onclick="copy('url--1694607539113579665')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8" id="id--2247030550016699607" class="url-input" readonly>
+                <button onclick="copy('id--2247030550016699607')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SBT NOVA MUTUM">
                 <strong>SBT NOVA MUTUM</strong>
-                <input type="text" value="https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8" id="url--1738218065453250856" readonly>
-                <button onclick="copy('url--1738218065453250856')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8" id="id-276790493658057886" class="url-input" readonly>
+                <button onclick="copy('id-276790493658057886')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SBT RONDONOPOLIS">
                 <strong>SBT RONDONOPOLIS</strong>
-                <input type="text" value="https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8" id="url-893141452900613152" readonly>
-                <button onclick="copy('url-893141452900613152')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8" id="id-8294166749099365747" class="url-input" readonly>
+                <button onclick="copy('id-8294166749099365747')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SBT SINOP">
                 <strong>SBT SINOP</strong>
-                <input type="text" value="https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8" id="url--449454967837184170" readonly>
-                <button onclick="copy('url--449454967837184170')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8" id="id--556697694968353328" class="url-input" readonly>
+                <button onclick="copy('id--556697694968353328')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SERTÃO TV (720P)">
                 <strong>SERTÃO TV (720P)</strong>
-                <input type="text" value="http://wz4.dnip.com.br/sertaotv/sertaotv.sdp/playlist.m3u8" id="url--2201906159455793565" readonly>
-                <button onclick="copy('url--2201906159455793565')">COPIAR URL</button>
+                <input type="text" value="http://wz4.dnip.com.br/sertaotv/sertaotv.sdp/playlist.m3u8" id="id-4298562398869947743" class="url-input" readonly>
+                <button onclick="copy('id-4298562398869947743')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SESC TV (1080P)">
                 <strong>SESC TV (1080P)</strong>
-                <input type="text" value="https://slbps-ml-sambatech.akamaized.net/samba-live/2472/7424/8a00fe7cc36ac263b2c3e9324497d5ff/video/93a9920d-1b24-4c5e-a7d2-63d5489f59b5_index.m3u8" id="url--3463359633581251976" readonly>
-                <button onclick="copy('url--3463359633581251976')">COPIAR URL</button>
+                <input type="text" value="https://slbps-ml-sambatech.akamaized.net/samba-live/2472/7424/8a00fe7cc36ac263b2c3e9324497d5ff/video/93a9920d-1b24-4c5e-a7d2-63d5489f59b5_index.m3u8" id="id--7388669328070241876" class="url-input" readonly>
+                <button onclick="copy('id--7388669328070241876')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SIC TV (720P)">
                 <strong>SIC TV (720P)</strong>
-                <input type="text" value="https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8" id="url-5111946437700046062" readonly>
-                <button onclick="copy('url-5111946437700046062')">COPIAR URL</button>
+                <input type="text" value="https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8" id="id-90608057866892299" class="url-input" readonly>
+                <button onclick="copy('id-90608057866892299')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SPORTV (1280P)">
                 <strong>SPORTV (1280P)</strong>
-                <input type="text" value="https://stm.sinalmycn.com/21000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--3136989038722888243" readonly>
-                <button onclick="copy('url--3136989038722888243')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/21000/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--7757797047575106500" class="url-input" readonly>
+                <button onclick="copy('id--7757797047575106500')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SPORTV 2 (1280P)">
                 <strong>SPORTV 2 (1280P)</strong>
-                <input type="text" value="https://stm.sinalmycn.com/21003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url--7271178980512764101" readonly>
-                <button onclick="copy('url--7271178980512764101')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/21003/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id-9095960529764013585" class="url-input" readonly>
+                <button onclick="copy('id-9095960529764013585')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SPORTV 2 ALTERNATIVO (720P)">
                 <strong>SPORTV 2 ALTERNATIVO (720P)</strong>
-                <input type="text" value="https://stm.sinalmycn.com/19025/video.m3u8" id="url--7792981184929131800" readonly>
-                <button onclick="copy('url--7792981184929131800')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/19025/video.m3u8" id="id--3478755266595751241" class="url-input" readonly>
+                <button onclick="copy('id--3478755266595751241')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SPORTV 3 (1080P)">
                 <strong>SPORTV 3 (1080P)</strong>
-                <input type="text" value="https://stm.sinalmycn.com/21006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="url-3348535148097241954" readonly>
-                <button onclick="copy('url-3348535148097241954')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/21006/video.m3u8?token=EkP2qSi13ckjQRLSIDoxI5rMZsF5rZyEYzqWjxD248ScEUPYQ0" id="id--3140543201289400164" class="url-input" readonly>
+                <button onclick="copy('id--3140543201289400164')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="SPORTV ALTERNATIVO (720P)">
                 <strong>SPORTV ALTERNATIVO (720P)</strong>
-                <input type="text" value="https://stm.sinalmycn.com/19024/video.m3u8" id="url-785241756973457407" readonly>
-                <button onclick="copy('url-785241756973457407')">COPIAR URL</button>
+                <input type="text" value="https://stm.sinalmycn.com/19024/video.m3u8" id="id-6334396663175311564" class="url-input" readonly>
+                <button onclick="copy('id-6334396663175311564')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="STZ TV (1080P)">
                 <strong>STZ TV (1080P)</strong>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8" id="url--3657368116454218422" readonly>
-                <button onclick="copy('url--3657368116454218422')">COPIAR URL</button>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8" id="id-8689939182421910912" class="url-input" readonly>
+                <button onclick="copy('id-8689939182421910912')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TCM 10 HD (1080P)">
                 <strong>TCM 10 HD (1080P)</strong>
-                <input type="text" value="https://live.tcm10.com.br/tcm10hd/stream.m3u8" id="url-5691671309085784672" readonly>
-                <button onclick="copy('url-5691671309085784672')">COPIAR URL</button>
+                <input type="text" value="https://live.tcm10.com.br/tcm10hd/stream.m3u8" id="id-5750495675034166248" class="url-input" readonly>
+                <button onclick="copy('id-5750495675034166248')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TIKTOK RADIO BRASIL (1080P)">
                 <strong>TIKTOK RADIO BRASIL (1080P)</strong>
-                <input type="text" value="https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529" id="url--4186940859803303480" readonly>
-                <button onclick="copy('url--4186940859803303480')">COPIAR URL</button>
+                <input type="text" value="https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529" id="id--703522135984405109" class="url-input" readonly>
+                <button onclick="copy('id--703522135984405109')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TIMES BRASIL (1080P)">
                 <strong>TIMES BRASIL (1080P)</strong>
-                <input type="text" value="https://cr7v.short.gy/ManoTV/TimesBrasil/Whats75991634025/CNBC/Index.m3u8" id="url--8075420832460514664" readonly>
-                <button onclick="copy('url--8075420832460514664')">COPIAR URL</button>
+                <input type="text" value="https://cr7v.short.gy/ManoTV/TimesBrasil/Whats75991634025/CNBC/Index.m3u8" id="id-2289939258393453284" class="url-input" readonly>
+                <button onclick="copy('id-2289939258393453284')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TIMES BRASIL (720P)">
                 <strong>TIMES BRASIL (720P)</strong>
-                <input type="text" value="https://ssai2-ads.api.leiniao.com/global-adinsertion-api/hls/live/v2/21fdb6dd7491406bba86497a24390a25/playlist.m3u8" id="url--8839131259612985031" readonly>
-                <button onclick="copy('url--8839131259612985031')">COPIAR URL</button>
+                <input type="text" value="https://ssai2-ads.api.leiniao.com/global-adinsertion-api/hls/live/v2/21fdb6dd7491406bba86497a24390a25/playlist.m3u8" id="id--8362464508126187019" class="url-input" readonly>
+                <button onclick="copy('id--8362464508126187019')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV A CRITICA">
                 <strong>TV A CRITICA</strong>
-                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8" id="url--989064988688276038" readonly>
-                <button onclick="copy('url--989064988688276038')">COPIAR URL</button>
+                <input type="text" value="https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8" id="id--3995029885193569040" class="url-input" readonly>
+                <button onclick="copy('id--3995029885193569040')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV A FOLHA (720P)">
                 <strong>TV A FOLHA (720P)</strong>
-                <input type="text" value="https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8" id="url--2714548083560338232" readonly>
-                <button onclick="copy('url--2714548083560338232')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8" id="id--8993478039562597846" class="url-input" readonly>
+                <button onclick="copy('id--8993478039562597846')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ALDEIA (720P)">
                 <strong>TV ALDEIA (720P)</strong>
-                <input type="text" value="https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8" id="url--7585189450725668957" readonly>
-                <button onclick="copy('url--7585189450725668957')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8" id="id-8817954806550193671" class="url-input" readonly>
+                <button onclick="copy('id-8817954806550193671')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ALIANÇA CATARINENSE (720P)">
                 <strong>TV ALIANÇA CATARINENSE (720P)</strong>
-                <input type="text" value="https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8" id="url--2493878061542670421" readonly>
-                <button onclick="copy('url--2493878061542670421')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8" id="id--2215680648065038952" class="url-input" readonly>
+                <button onclick="copy('id--2215680648065038952')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ALTERNATIVA (410P)">
                 <strong>TV ALTERNATIVA (410P)</strong>
-                <input type="text" value="https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8" id="url-1072247557228600770" readonly>
-                <button onclick="copy('url-1072247557228600770')">COPIAR URL</button>
+                <input type="text" value="https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8" id="id-605683731996382086" class="url-input" readonly>
+                <button onclick="copy('id-605683731996382086')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV APARECIDA (1080P) [NOT 24/7]">
                 <strong>TV APARECIDA (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8" id="url--7052695664270256284" readonly>
-                <button onclick="copy('url--7052695664270256284')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8" id="id--1810698623393737392" class="url-input" readonly>
+                <button onclick="copy('id--1810698623393737392')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ARAPUAN (720P)">
                 <strong>TV ARAPUAN (720P)</strong>
-                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8" id="url-2933812509665750042" readonly>
-                <button onclick="copy('url-2933812509665750042')">COPIAR URL</button>
+                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8" id="id-2573430618522139428" class="url-input" readonly>
+                <button onclick="copy('id-2573430618522139428')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ARATU (720P)">
                 <strong>TV ARATU (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8" id="url-4249227725222944461" readonly>
-                <button onclick="copy('url-4249227725222944461')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8" id="id-551097135754756180" class="url-input" readonly>
+                <button onclick="copy('id-551097135754756180')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ASSEMBLÉIA CEARÁ (720P)">
                 <strong>TV ASSEMBLÉIA CEARÁ (720P)</strong>
-                <input type="text" value="https://jjn5dkk9bd.zoeweb.tv/z404-live/stream/playlist.m3u8" id="url--4449807963312019814" readonly>
-                <button onclick="copy('url--4449807963312019814')">COPIAR URL</button>
+                <input type="text" value="https://jjn5dkk9bd.zoeweb.tv/z404-live/stream/playlist.m3u8" id="id--439737984795789126" class="url-input" readonly>
+                <button onclick="copy('id--439737984795789126')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BIRIGUI (320P)">
                 <strong>TV BIRIGUI (320P)</strong>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8" id="url-5350865738412301133" readonly>
-                <button onclick="copy('url-5350865738412301133')">COPIAR URL</button>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8" id="id-3454124137064765117" class="url-input" readonly>
+                <button onclick="copy('id-3454124137064765117')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BIRIGUI (320P)">
                 <strong>TV BIRIGUI (320P)</strong>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/tvdigitalbirigui/playlist.m3u8" id="url--185652542042254477" readonly>
-                <button onclick="copy('url--185652542042254477')">COPIAR URL</button>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/tvdigitalbirigui/playlist.m3u8" id="id--1122010626429223341" class="url-input" readonly>
+                <button onclick="copy('id--1122010626429223341')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BIRIGUI (640P)">
                 <strong>TV BIRIGUI (640P)</strong>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url-1798684952190945039" readonly>
-                <button onclick="copy('url-1798684952190945039')">COPIAR URL</button>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="id-4641915235965034842" class="url-input" readonly>
+                <button onclick="copy('id-4641915235965034842')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BRASIL (720P)">
                 <strong>TV BRASIL (720P)</strong>
-                <input type="text" value="https://tvbrasil-stream.ebc.com.br/index.m3u8" id="url-7462423351381912810" readonly>
-                <button onclick="copy('url-7462423351381912810')">COPIAR URL</button>
+                <input type="text" value="https://tvbrasil-stream.ebc.com.br/index.m3u8" id="id--6705958543685020388" class="url-input" readonly>
+                <button onclick="copy('id--6705958543685020388')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BRASIL OESTE (720P)">
                 <strong>TV BRASIL OESTE (720P)</strong>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8" id="url--8545655225759437235" readonly>
-                <button onclick="copy('url--8545655225759437235')">COPIAR URL</button>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8" id="id-1564903554211420849" class="url-input" readonly>
+                <button onclick="copy('id-1564903554211420849')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV BRUSQUE (720P)">
                 <strong>TV BRUSQUE (720P)</strong>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8" id="url--1408745482733463298" readonly>
-                <button onclick="copy('url--1408745482733463298')">COPIAR URL</button>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8" id="id--1798147196911023334" class="url-input" readonly>
+                <button onclick="copy('id--1798147196911023334')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CANCAO NOVA (720P)">
                 <strong>TV CANCAO NOVA (720P)</strong>
-                <input type="text" value="https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8" id="url--5666324294907719299" readonly>
-                <button onclick="copy('url--5666324294907719299')">COPIAR URL</button>
+                <input type="text" value="https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8" id="id--6100600739873539988" class="url-input" readonly>
+                <button onclick="copy('id--6100600739873539988')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CIDADE DE PETRÓPOLIS (1080P) [NOT 24/7]">
                 <strong>TV CIDADE DE PETRÓPOLIS (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8" id="url--7836056894504961330" readonly>
-                <button onclick="copy('url--7836056894504961330')">COPIAR URL</button>
+                <input type="text" value="https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8" id="id-3015913303496471690" class="url-input" readonly>
+                <button onclick="copy('id-3015913303496471690')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CIDADE OESTE">
                 <strong>TV CIDADE OESTE</strong>
-                <input type="text" value="https://radios.dataprimer.com.br:5443/LiveApp/streams/psuqNyPC1AW1BcUZ1573443847601.m3u8" id="url-5483744931201873166" readonly>
-                <button onclick="copy('url-5483744931201873166')">COPIAR URL</button>
+                <input type="text" value="https://radios.dataprimer.com.br:5443/LiveApp/streams/psuqNyPC1AW1BcUZ1573443847601.m3u8" id="id-3136407479127866884" class="url-input" readonly>
+                <button onclick="copy('id-3136407479127866884')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CIDADE VERDE (720P)">
                 <strong>TV CIDADE VERDE (720P)</strong>
-                <input type="text" value="https://stmv1.transmissaodigital.com/cidadeverdenovo/cidadeverdenovo/playlist.m3u8" id="url--213352287565955234" readonly>
-                <button onclick="copy('url--213352287565955234')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.transmissaodigital.com/cidadeverdenovo/cidadeverdenovo/playlist.m3u8" id="id-4732154087939927598" class="url-input" readonly>
+                <button onclick="copy('id-4732154087939927598')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CLUBE (720P)">
                 <strong>TV CLUBE (720P)</strong>
-                <input type="text" value="https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8" id="url--6645080172441125701" readonly>
-                <button onclick="copy('url--6645080172441125701')">COPIAR URL</button>
+                <input type="text" value="https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8" id="id-6935295596938156193" class="url-input" readonly>
+                <button onclick="copy('id-6935295596938156193')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CULTURA">
                 <strong>TV CULTURA</strong>
-                <input type="text" value="https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8" id="url-4997396548957575049" readonly>
-                <button onclick="copy('url-4997396548957575049')">COPIAR URL</button>
+                <input type="text" value="https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8" id="id--8926942378889179519" class="url-input" readonly>
+                <button onclick="copy('id--8926942378889179519')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CURUÇA (360P)">
                 <strong>TV CURUÇA (360P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8" id="url-7069476810221758330" readonly>
-                <button onclick="copy('url-7069476810221758330')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8" id="id-7282640350428027404" class="url-input" readonly>
+                <button onclick="copy('id-7282640350428027404')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CÂMARA (1080P)">
                 <strong>TV CÂMARA (1080P)</strong>
-                <input type="text" value="https://stream3.camara.gov.br/tv1/manifest.m3u8" id="url--7351467949981128411" readonly>
-                <button onclick="copy('url--7351467949981128411')">COPIAR URL</button>
+                <input type="text" value="https://stream3.camara.gov.br/tv1/manifest.m3u8" id="id-439001216416635588" class="url-input" readonly>
+                <button onclick="copy('id-439001216416635588')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CÂMARA 2 (1080P) [NOT 24/7]">
                 <strong>TV CÂMARA 2 (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://stream3.camara.gov.br/tv2/manifest.m3u8" id="url--4097542756178013354" readonly>
-                <button onclick="copy('url--4097542756178013354')">COPIAR URL</button>
+                <input type="text" value="https://stream3.camara.gov.br/tv2/manifest.m3u8" id="id-5528479784286680097" class="url-input" readonly>
+                <button onclick="copy('id-5528479784286680097')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV CÂMARA SALVADOR (288P) [NOT 24/7]">
                 <strong>TV CÂMARA SALVADOR (288P) [NOT 24/7]</strong>
-                <input type="text" value="https://596639ebdd89b.streamlock.net/8114/8114/playlist.m3u8" id="url--6129746910412377639" readonly>
-                <button onclick="copy('url--6129746910412377639')">COPIAR URL</button>
+                <input type="text" value="https://596639ebdd89b.streamlock.net/8114/8114/playlist.m3u8" id="id-6397584644390861925" class="url-input" readonly>
+                <button onclick="copy('id-6397584644390861925')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DAS ARTES (360P)">
                 <strong>TV DAS ARTES (360P)</strong>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdasartes/tvdasartes/playlist.m3u8" id="url-4850379240378071071" readonly>
-                <button onclick="copy('url-4850379240378071071')">COPIAR URL</button>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/tvdasartes/tvdasartes/playlist.m3u8" id="id--5751908890922591755" class="url-input" readonly>
+                <button onclick="copy('id--5751908890922591755')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DESTAK (320P)">
                 <strong>TV DESTAK (320P)</strong>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/pascoal/playlist.m3u8" id="url--1728418255364978501" readonly>
-                <button onclick="copy('url--1728418255364978501')">COPIAR URL</button>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/pascoal/playlist.m3u8" id="id-242986227167225038" class="url-input" readonly>
+                <button onclick="copy('id-242986227167225038')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DESTAK (360P)">
                 <strong>TV DESTAK (360P)</strong>
-                <input type="text" value="http://tv02.logicahost.com.br:1935/pascoal/pascoal/live.m3u8" id="url-5407988413717051135" readonly>
-                <button onclick="copy('url-5407988413717051135')">COPIAR URL</button>
+                <input type="text" value="http://tv02.logicahost.com.br:1935/pascoal/pascoal/live.m3u8" id="id--6686487810680301176" class="url-input" readonly>
+                <button onclick="copy('id--6686487810680301176')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DESTAK (360P)">
                 <strong>TV DESTAK (360P)</strong>
-                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/_definst_/pascoal/playlist.m3u8" id="url-5135093042919549919" readonly>
-                <button onclick="copy('url-5135093042919549919')">COPIAR URL</button>
+                <input type="text" value="https://59f2354c05961.streamlock.net:1443/pascoal/_definst_/pascoal/playlist.m3u8" id="id--7845750765476038900" class="url-input" readonly>
+                <button onclick="copy('id--7845750765476038900')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DIFUSORA LESTE (1080P)">
                 <strong>TV DIFUSORA LESTE (1080P)</strong>
-                <input type="text" value="https://stream.amsolution.net.br:8443/live/60d0a8ea6b884/index.m3u8" id="url--584719123589033605" readonly>
-                <button onclick="copy('url--584719123589033605')">COPIAR URL</button>
+                <input type="text" value="https://stream.amsolution.net.br:8443/live/60d0a8ea6b884/index.m3u8" id="id-4653874291507594835" class="url-input" readonly>
+                <button onclick="copy('id-4653874291507594835')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DIGITAL BIRIGUÍ (640P)">
                 <strong>TV DIGITAL BIRIGUÍ (640P)</strong>
-                <input type="text" value="http://wse01.logicahost.com.br:1935/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="url--4783076166938379075" readonly>
-                <button onclick="copy('url--4783076166938379075')">COPIAR URL</button>
+                <input type="text" value="http://wse01.logicahost.com.br:1935/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8" id="id-8925840397794536103" class="url-input" readonly>
+                <button onclick="copy('id-8925840397794536103')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DIÁRIO MACAPÁ (1080P) [NOT 24/7]">
                 <strong>TV DIÁRIO MACAPÁ (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://5ad482a77183d.streamlock.net/marliomelohotmail.com/marliomelohotmail.com/playlist.m3u8" id="url-7711784021617113129" readonly>
-                <button onclick="copy('url-7711784021617113129')">COPIAR URL</button>
+                <input type="text" value="https://5ad482a77183d.streamlock.net/marliomelohotmail.com/marliomelohotmail.com/playlist.m3u8" id="id--7927176066424241420" class="url-input" readonly>
+                <button onclick="copy('id--7927176066424241420')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV DO POVO (540P)">
                 <strong>TV DO POVO (540P)</strong>
-                <input type="text" value="https://video01.logicahost.com.br/tvdopovo1/tvdopovo1/playlist.m3u8" id="url-8772596225608599576" readonly>
-                <button onclick="copy('url-8772596225608599576')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/tvdopovo1/tvdopovo1/playlist.m3u8" id="id-6022426470074962577" class="url-input" readonly>
+                <button onclick="copy('id-6022426470074962577')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV EMPIRE MAGAZINE (720P)">
                 <strong>TV EMPIRE MAGAZINE (720P)</strong>
-                <input type="text" value="https://5d82644094cc0.streamlock.net/empiremagazinetv/empiremagazinetv/playlist.m3u8" id="url--5011497769732256157" readonly>
-                <button onclick="copy('url--5011497769732256157')">COPIAR URL</button>
+                <input type="text" value="https://5d82644094cc0.streamlock.net/empiremagazinetv/empiremagazinetv/playlist.m3u8" id="id--8655496144345256414" class="url-input" readonly>
+                <button onclick="copy('id--8655496144345256414')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ENCONTRO DAS AGUAS">
                 <strong>TV ENCONTRO DAS AGUAS</strong>
-                <input type="text" value="https://stmv7.samcast.com.br/sistemaencontrodasaguas/sistemaencontrodasaguas/playlist.m3u8" id="url-27043801530981756" readonly>
-                <button onclick="copy('url-27043801530981756')">COPIAR URL</button>
+                <input type="text" value="https://stmv7.samcast.com.br/sistemaencontrodasaguas/sistemaencontrodasaguas/playlist.m3u8" id="id--8776780962028255175" class="url-input" readonly>
+                <button onclick="copy('id--8776780962028255175')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV EVANGELIZAR (480P)">
                 <strong>TV EVANGELIZAR (480P)</strong>
-                <input type="text" value="https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8" id="url-1371686183614504288" readonly>
-                <button onclick="copy('url-1371686183614504288')">COPIAR URL</button>
+                <input type="text" value="https://5f593df7851db.streamlock.net/evangelizar/tv/playlist.m3u8" id="id--2694287235479510868" class="url-input" readonly>
+                <button onclick="copy('id--2694287235479510868')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV FUTURO (1080P)">
                 <strong>TV FUTURO (1080P)</strong>
-                <input type="text" value="https://tv02.zas.media:1936/tvfuturo/tvfuturo/playlist.m3u8" id="url-6817706206444076448" readonly>
-                <button onclick="copy('url-6817706206444076448')">COPIAR URL</button>
+                <input type="text" value="https://tv02.zas.media:1936/tvfuturo/tvfuturo/playlist.m3u8" id="id--4116753028017325233" class="url-input" readonly>
+                <button onclick="copy('id--4116753028017325233')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV GIDEOES (1080P) [NOT 24/7]">
                 <strong>TV GIDEOES (1080P) [NOT 24/7]</strong>
-                <input type="text" value="https://streaming01.zas.media/gideoes/programacao/playlist.m3u8" id="url-5991663444059080377" readonly>
-                <button onclick="copy('url-5991663444059080377')">COPIAR URL</button>
+                <input type="text" value="https://streaming01.zas.media/gideoes/programacao/playlist.m3u8" id="id--7835911711579151993" class="url-input" readonly>
+                <button onclick="copy('id--7835911711579151993')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV GRANDE NATAL (1080P)">
                 <strong>TV GRANDE NATAL (1080P)</strong>
-                <input type="text" value="http://tvgrandenatalhd.duckdns.org:8080/hls/live.m3u8" id="url--8449545514617495930" readonly>
-                <button onclick="copy('url--8449545514617495930')">COPIAR URL</button>
+                <input type="text" value="http://tvgrandenatalhd.duckdns.org:8080/hls/live.m3u8" id="id-6141241340828221193" class="url-input" readonly>
+                <button onclick="copy('id-6141241340828221193')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV GRAO PARÁ (720P)">
                 <strong>TV GRAO PARÁ (720P)</strong>
-                <input type="text" value="https://video01.kshost.com.br:4443/moises3834/moises3834/playlist.m3u8" id="url-5137645358959895678" readonly>
-                <button onclick="copy('url-5137645358959895678')">COPIAR URL</button>
+                <input type="text" value="https://video01.kshost.com.br:4443/moises3834/moises3834/playlist.m3u8" id="id--6240130653776280060" class="url-input" readonly>
+                <button onclick="copy('id--6240130653776280060')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV GUARÁ (720P) [NOT 24/7]">
                 <strong>TV GUARÁ (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8" id="url--8200233095009635444" readonly>
-                <button onclick="copy('url--8200233095009635444')">COPIAR URL</button>
+                <input type="text" value="https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8" id="id--3849482621967264035" class="url-input" readonly>
+                <button onclick="copy('id--3849482621967264035')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV INTERLAGOS (360P)">
                 <strong>TV INTERLAGOS (360P)</strong>
-                <input type="text" value="https://v8.ciclano.io:1443/tvinterlagos/_definst_/tvinterlagos/playlist.m3u8" id="url--7549710413204841694" readonly>
-                <button onclick="copy('url--7549710413204841694')">COPIAR URL</button>
+                <input type="text" value="https://v8.ciclano.io:1443/tvinterlagos/_definst_/tvinterlagos/playlist.m3u8" id="id--7546468274522261312" class="url-input" readonly>
+                <button onclick="copy('id--7546468274522261312')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV LIBERDADE (720P) [NOT 24/7]">
                 <strong>TV LIBERDADE (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://srv1.paineldevideo.com/liberdaderadioetv/liberdaderadioetv/playlist.m3u8" id="url--5242496691973052339" readonly>
-                <button onclick="copy('url--5242496691973052339')">COPIAR URL</button>
+                <input type="text" value="https://srv1.paineldevideo.com/liberdaderadioetv/liberdaderadioetv/playlist.m3u8" id="id-2223977399887448837" class="url-input" readonly>
+                <button onclick="copy('id-2223977399887448837')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV LIFE AMERICA (720P)">
                 <strong>TV LIFE AMERICA (720P)</strong>
-                <input type="text" value="https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8" id="url--2761940632113021082" readonly>
-                <button onclick="copy('url--2761940632113021082')">COPIAR URL</button>
+                <input type="text" value="https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8" id="id--5680572347599569666" class="url-input" readonly>
+                <button onclick="copy('id--5680572347599569666')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV MACKENZIE (480P)">
                 <strong>TV MACKENZIE (480P)</strong>
-                <input type="text" value="https://player.internetaovivo.com:8443/live_tvmackenzieabr/tvmackenzieabr/playlist.m3u8" id="url-745796015515998272" readonly>
-                <button onclick="copy('url-745796015515998272')">COPIAR URL</button>
+                <input type="text" value="https://player.internetaovivo.com:8443/live_tvmackenzieabr/tvmackenzieabr/playlist.m3u8" id="id--7904571084997217472" class="url-input" readonly>
+                <button onclick="copy('id--7904571084997217472')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV MAIS MARICÁ (1080P)">
                 <strong>TV MAIS MARICÁ (1080P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8" id="url-7678631440409674263" readonly>
-                <button onclick="copy('url-7678631440409674263')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8" id="id-3908308608383241141" class="url-input" readonly>
+                <button onclick="copy('id-3908308608383241141')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV MARAJOARA (720P)">
                 <strong>TV MARAJOARA (720P)</strong>
-                <input type="text" value="https://tv02.zas.media:1936/tvmarajoara/tvmarajoara/playlist.m3u8" id="url-4794456765012899128" readonly>
-                <button onclick="copy('url-4794456765012899128')">COPIAR URL</button>
+                <input type="text" value="https://tv02.zas.media:1936/tvmarajoara/tvmarajoara/playlist.m3u8" id="id-740775205934192990" class="url-input" readonly>
+                <button onclick="copy('id-740775205934192990')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV MAX (720P)">
                 <strong>TV MAX (720P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmax/tvmax/playlist.m3u8" id="url-4739519971385283312" readonly>
-                <button onclick="copy('url-4739519971385283312')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvmax/tvmax/playlist.m3u8" id="id--1581774942894427506" class="url-input" readonly>
+                <button onclick="copy('id--1581774942894427506')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV METROPOLE (720P) [NOT 24/7]">
                 <strong>TV METROPOLE (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://cdn-fundacao-2110.ciclano.io:1443/fundacao-2110/fundacao-2110/playlist.m3u8" id="url--1392997056131464882" readonly>
-                <button onclick="copy('url--1392997056131464882')">COPIAR URL</button>
+                <input type="text" value="https://cdn-fundacao-2110.ciclano.io:1443/fundacao-2110/fundacao-2110/playlist.m3u8" id="id--4025299723336809173" class="url-input" readonly>
+                <button onclick="copy('id--4025299723336809173')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV MODELO (720P)">
                 <strong>TV MODELO (720P)</strong>
-                <input type="text" value="https://video09.logicahost.com.br/tvmodelo/tvmodelo/playlist.m3u" id="url--5182167537492495655" readonly>
-                <button onclick="copy('url--5182167537492495655')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/tvmodelo/tvmodelo/playlist.m3u" id="id--4609831850281398615" class="url-input" readonly>
+                <button onclick="copy('id--4609831850281398615')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PADRE CICERO (720P)">
                 <strong>TV PADRE CICERO (720P)</strong>
-                <input type="text" value="https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8" id="url-2368392977448668365" readonly>
-                <button onclick="copy('url-2368392977448668365')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8" id="id--4655131143712558765" class="url-input" readonly>
+                <button onclick="copy('id--4655131143712558765')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PAMPA">
                 <strong>TV PAMPA</strong>
-                <input type="text" value="https://video04.logicahost.com.br/tvpampa/tvpampa/playlist.m3u8" id="url--5628586060629310991" readonly>
-                <button onclick="copy('url--5628586060629310991')">COPIAR URL</button>
+                <input type="text" value="https://video04.logicahost.com.br/tvpampa/tvpampa/playlist.m3u8" id="id-5406725475519854385" class="url-input" readonly>
+                <button onclick="copy('id-5406725475519854385')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PANTANAL MS (360P) [NOT 24/7]">
                 <strong>TV PANTANAL MS (360P) [NOT 24/7]</strong>
-                <input type="text" value="https://5a2b083e9f360.streamlock.net/tvpantanal/tvpantanal.sdp/playlist.m3u8" id="url-4523033851124024487" readonly>
-                <button onclick="copy('url-4523033851124024487')">COPIAR URL</button>
+                <input type="text" value="https://5a2b083e9f360.streamlock.net/tvpantanal/tvpantanal.sdp/playlist.m3u8" id="id--5608302293732474137" class="url-input" readonly>
+                <button onclick="copy('id--5608302293732474137')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PARAENSE (720P)">
                 <strong>TV PARAENSE (720P)</strong>
-                <input type="text" value="https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u" id="url-8096950665999027576" readonly>
-                <button onclick="copy('url-8096950665999027576')">COPIAR URL</button>
+                <input type="text" value="https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u" id="id-7173111649607472184" class="url-input" readonly>
+                <button onclick="copy('id-7173111649607472184')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PARANÁ TURISMO (720P) [NOT 24/7]">
                 <strong>TV PARANÁ TURISMO (720P) [NOT 24/7]</strong>
-                <input type="text" value="http://200.189.113.201/hls/tve.m3u8" id="url--3642151349204275222" readonly>
-                <button onclick="copy('url--3642151349204275222')">COPIAR URL</button>
+                <input type="text" value="http://200.189.113.201/hls/tve.m3u8" id="id--8583826877031168800" class="url-input" readonly>
+                <button onclick="copy('id--8583826877031168800')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV PASSO FUNDO (720P)">
                 <strong>TV PASSO FUNDO (720P)</strong>
-                <input type="text" value="https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8" id="url--3492558351087364414" readonly>
-                <button onclick="copy('url--3492558351087364414')">COPIAR URL</button>
+                <input type="text" value="https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8" id="id-3516756414180255931" class="url-input" readonly>
+                <button onclick="copy('id-3516756414180255931')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SANDEGI (360P)">
                 <strong>TV SANDEGI (360P)</strong>
-                <input type="text" value="https://video01.kshost.com.br/antonio9510/antonio9510/playlist.m3u8" id="url--5069286036866087781" readonly>
-                <button onclick="copy('url--5069286036866087781')">COPIAR URL</button>
+                <input type="text" value="https://video01.kshost.com.br/antonio9510/antonio9510/playlist.m3u8" id="id--3325159999019398035" class="url-input" readonly>
+                <button onclick="copy('id--3325159999019398035')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SERIES 1 AS PANTERAS (480P)">
                 <strong>TV SERIES 1 AS PANTERAS (480P)</strong>
-                <input type="text" value="https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8" id="url--2348193616675992216" readonly>
-                <button onclick="copy('url--2348193616675992216')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8" id="id--4988684799995449241" class="url-input" readonly>
+                <button onclick="copy('id--4988684799995449241')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SIM CACHOEIRO (720P)">
                 <strong>TV SIM CACHOEIRO (720P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8" id="url-7660006984411471716" readonly>
-                <button onclick="copy('url-7660006984411471716')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8" id="id-7554155538038976251" class="url-input" readonly>
+                <button onclick="copy('id-7554155538038976251')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SIM COLATINA (720P)">
                 <strong>TV SIM COLATINA (720P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8132/8132/playlist.m3u8" id="url-6965215429156640699" readonly>
-                <button onclick="copy('url-6965215429156640699')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8132/8132/playlist.m3u8" id="id-5408610512253479578" class="url-input" readonly>
+                <button onclick="copy('id-5408610512253479578')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SIM SÃO MATEUS (720P)">
                 <strong>TV SIM SÃO MATEUS (720P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8236/8236/playlist.m3u8" id="url--397710228633233170" readonly>
-                <button onclick="copy('url--397710228633233170')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/8236/8236/playlist.m3u8" id="id-7210054139616884647" class="url-input" readonly>
+                <button onclick="copy('id-7210054139616884647')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SOL COMUNIDADE (480P) [NOT 24/7]">
                 <strong>TV SOL COMUNIDADE (480P) [NOT 24/7]</strong>
-                <input type="text" value="http://streaming03.zas.media:1935/tvsol/tvsol/playlist.m3u8" id="url-6839314905926680498" readonly>
-                <button onclick="copy('url-6839314905926680498')">COPIAR URL</button>
+                <input type="text" value="http://streaming03.zas.media:1935/tvsol/tvsol/playlist.m3u8" id="id--4265519977280869768" class="url-input" readonly>
+                <button onclick="copy('id--4265519977280869768')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SUL BAHIA (320P)">
                 <strong>TV SUL BAHIA (320P)</strong>
-                <input type="text" value="https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8" id="url--1385006440060117459" readonly>
-                <button onclick="copy('url--1385006440060117459')">COPIAR URL</button>
+                <input type="text" value="https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8" id="id-1128168653438096880" class="url-input" readonly>
+                <button onclick="copy('id-1128168653438096880')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SUL DE MINAS (720P)">
                 <strong>TV SUL DE MINAS (720P)</strong>
-                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvsuldeminas/tvsuldeminas/playlist.m3u8" id="url-5067124471795252829" readonly>
-                <button onclick="copy('url-5067124471795252829')">COPIAR URL</button>
+                <input type="text" value="https://5cf4a2c2512a2.streamlock.net/tvsuldeminas/tvsuldeminas/playlist.m3u8" id="id--8817166342811367073" class="url-input" readonly>
+                <button onclick="copy('id--8817166342811367073')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV SÃO RAIMUNDO (268P)">
                 <strong>TV SÃO RAIMUNDO (268P)</strong>
-                <input type="text" value="https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8" id="url-4141520636867393678" readonly>
-                <button onclick="copy('url-4141520636867393678')">COPIAR URL</button>
+                <input type="text" value="https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8" id="id-4422341159763573041" class="url-input" readonly>
+                <button onclick="copy('id-4422341159763573041')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV TERCEIRO ANJO (360P)">
                 <strong>TV TERCEIRO ANJO (360P)</strong>
-                <input type="text" value="https://streamer1.streamhost.org/salive/GMI3anjoh/playlist.m3u8" id="url--6551586700747400279" readonly>
-                <button onclick="copy('url--6551586700747400279')">COPIAR URL</button>
+                <input type="text" value="https://streamer1.streamhost.org/salive/GMI3anjoh/playlist.m3u8" id="id-1576074308320999192" class="url-input" readonly>
+                <button onclick="copy('id-1576074308320999192')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV THATHI (720P) [NOT 24/7]">
                 <strong>TV THATHI (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8" id="url--4375406927090600397" readonly>
-                <button onclick="copy('url--4375406927090600397')">COPIAR URL</button>
+                <input type="text" value="https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8" id="id-5266871837131044187" class="url-input" readonly>
+                <button onclick="copy('id-5266871837131044187')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV UFG (720P) [NOT 24/7]">
                 <strong>TV UFG (720P) [NOT 24/7]</strong>
-                <input type="text" value="http://flash.softhost.com.br:1935/ufg/tvufgweb/playlist.m3u8" id="url--2690328218280085253" readonly>
-                <button onclick="copy('url--2690328218280085253')">COPIAR URL</button>
+                <input type="text" value="http://flash.softhost.com.br:1935/ufg/tvufgweb/playlist.m3u8" id="id--6402821186561742357" class="url-input" readonly>
+                <button onclick="copy('id--6402821186561742357')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV UFOP (1080P)">
                 <strong>TV UFOP (1080P)</strong>
-                <input type="text" value="https://app.tvufop.com.br/hls/tvufop.m3u8" id="url-4268437166731432773" readonly>
-                <button onclick="copy('url-4268437166731432773')">COPIAR URL</button>
+                <input type="text" value="https://app.tvufop.com.br/hls/tvufop.m3u8" id="id--5882286992454860297" class="url-input" readonly>
+                <button onclick="copy('id--5882286992454860297')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV UNIVERSAL (480P)">
                 <strong>TV UNIVERSAL (480P)</strong>
-                <input type="text" value="https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8" id="url-6666947301840643578" readonly>
-                <button onclick="copy('url-6666947301840643578')">COPIAR URL</button>
+                <input type="text" value="https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8" id="id-275451834412168121" class="url-input" readonly>
+                <button onclick="copy('id-275451834412168121')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV VILA REAL (720P)">
                 <strong>TV VILA REAL (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10841/LVW10841_mT77z9o2cP/playlist.m3u8" id="url-3013416973051449463" readonly>
-                <button onclick="copy('url-3013416973051449463')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-10841/LVW10841_mT77z9o2cP/playlist.m3u8" id="id-6502814469254951183" class="url-input" readonly>
+                <button onclick="copy('id-6502814469254951183')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV VIÇOSA (480P)">
                 <strong>TV VIÇOSA (480P)</strong>
-                <input type="text" value="http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8" id="url--626626719656806152" readonly>
-                <button onclick="copy('url--626626719656806152')">COPIAR URL</button>
+                <input type="text" value="http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8" id="id--1577790141862341443" class="url-input" readonly>
+                <button onclick="copy('id--1577790141862341443')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TV ZOOM (720P)">
                 <strong>TV ZOOM (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9730/LVW9730_LmUwslM8jt/playlist.m3u8" id="url-7645761296722668828" readonly>
-                <button onclick="copy('url-7645761296722668828')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-9730/LVW9730_LmUwslM8jt/playlist.m3u8" id="id-4611548417692518834" class="url-input" readonly>
+                <button onclick="copy('id-4611548417692518834')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVC-RIO">
                 <strong>TVC-RIO</strong>
-                <input type="text" value="https://video05.logicahost.com.br/comunitariario/comunitariario/playlist.m3u8" id="url--8441694917952277597" readonly>
-                <button onclick="copy('url--8441694917952277597')">COPIAR URL</button>
+                <input type="text" value="https://video05.logicahost.com.br/comunitariario/comunitariario/playlist.m3u8" id="id--3297535005190255869" class="url-input" readonly>
+                <button onclick="copy('id--3297535005190255869')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVCOM DF (360P)">
                 <strong>TVCOM DF (360P)</strong>
-                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=" id="url-5630508642373408360" readonly>
-                <button onclick="copy('url-5630508642373408360')">COPIAR URL</button>
+                <input type="text" value="https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=" id="id-744052858330634256" class="url-input" readonly>
+                <button onclick="copy('id-744052858330634256')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVCOM MACEIÓ (480P)">
                 <strong>TVCOM MACEIÓ (480P)</strong>
-                <input type="text" value="https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8" id="url--949671770186111718" readonly>
-                <button onclick="copy('url--949671770186111718')">COPIAR URL</button>
+                <input type="text" value="https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8" id="id-1244062067529067667" class="url-input" readonly>
+                <button onclick="copy('id-1244062067529067667')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVE RS (1080P)">
                 <strong>TVE RS (1080P)</strong>
-                <input type="text" value="http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url--5214523302426323575" readonly>
-                <button onclick="copy('url--5214523302426323575')">COPIAR URL</button>
+                <input type="text" value="http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8" id="id-5225505150339121321" class="url-input" readonly>
+                <button onclick="copy('id-5225505150339121321')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVE RS (1080P)">
                 <strong>TVE RS (1080P)</strong>
-                <input type="text" value="https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8" id="url-5949721816906737723" readonly>
-                <button onclick="copy('url-5949721816906737723')">COPIAR URL</button>
+                <input type="text" value="https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8" id="id-7333340211882622398" class="url-input" readonly>
+                <button onclick="copy('id-7333340211882622398')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVE RS (1080P) [NOT 24/7]">
                 <strong>TVE RS (1080P) [NOT 24/7]</strong>
-                <input type="text" value="http://selpro1348.procergs.com.br:1935/tve/stve/playlist.m3u8" id="url-7651196543237880180" readonly>
-                <button onclick="copy('url-7651196543237880180')">COPIAR URL</button>
+                <input type="text" value="http://selpro1348.procergs.com.br:1935/tve/stve/playlist.m3u8" id="id-6112190108327391521" class="url-input" readonly>
+                <button onclick="copy('id-6112190108327391521')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVITAPÉ (720P)">
                 <strong>TVITAPÉ (720P)</strong>
-                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8" id="url-1766156288743380073" readonly>
-                <button onclick="copy('url-1766156288743380073')">COPIAR URL</button>
+                <input type="text" value="https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8" id="id-1783619025989361039" class="url-input" readonly>
+                <button onclick="copy('id-1783619025989361039')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC COMEDY (720P)">
                 <strong>TVMATIC COMEDY (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/comedy.m3u8" id="url--6525167437641785362" readonly>
-                <button onclick="copy('url--6525167437641785362')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/comedy.m3u8" id="id--2131599028247511247" class="url-input" readonly>
+                <button onclick="copy('id--2131599028247511247')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC CRAFTS (720P)">
                 <strong>TVMATIC CRAFTS (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/crafts.m3u8" id="url--1629518314813748584" readonly>
-                <button onclick="copy('url--1629518314813748584')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/crafts.m3u8" id="id--6080076636445521704" class="url-input" readonly>
+                <button onclick="copy('id--6080076636445521704')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC FACEBOOK (720P)">
                 <strong>TVMATIC FACEBOOK (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/facebook.m3u8" id="url-3302678268206683110" readonly>
-                <button onclick="copy('url-3302678268206683110')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/facebook.m3u8" id="id-1114689899377554449" class="url-input" readonly>
+                <button onclick="copy('id-1114689899377554449')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC FIGHT (720P)">
                 <strong>TVMATIC FIGHT (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/fight.m3u8" id="url-5321000357841776980" readonly>
-                <button onclick="copy('url-5321000357841776980')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/fight.m3u8" id="id--203631558962780555" class="url-input" readonly>
+                <button onclick="copy('id--203631558962780555')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC FUNNY (720P)">
                 <strong>TVMATIC FUNNY (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/funny.m3u8" id="url--95581541998600454" readonly>
-                <button onclick="copy('url--95581541998600454')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/funny.m3u8" id="id--5124703017881256674" class="url-input" readonly>
+                <button onclick="copy('id--5124703017881256674')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVMATIC TIKTOK (720P)">
                 <strong>TVMATIC TIKTOK (720P)</strong>
-                <input type="text" value="http://cdn.tvmatic.net/tiktok.m3u8" id="url-4211024183365614639" readonly>
-                <button onclick="copy('url-4211024183365614639')">COPIAR URL</button>
+                <input type="text" value="http://cdn.tvmatic.net/tiktok.m3u8" id="id-2796737772799532091" class="url-input" readonly>
+                <button onclick="copy('id-2796737772799532091')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVNBN (720P)">
                 <strong>TVNBN (720P)</strong>
-                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8" id="url--8224161892515288057" readonly>
-                <button onclick="copy('url--8224161892515288057')">COPIAR URL</button>
+                <input type="text" value="https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8" id="id-82232212811071344" class="url-input" readonly>
+                <button onclick="copy('id-82232212811071344')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="TVÍDEONEWS (720P) [NOT 24/7]">
                 <strong>TVÍDEONEWS (720P) [NOT 24/7]</strong>
-                <input type="text" value="https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8" id="url--2512851003607020060" readonly>
-                <button onclick="copy('url--2512851003607020060')">COPIAR URL</button>
+                <input type="text" value="https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8" id="id--3282611635145004523" class="url-input" readonly>
+                <button onclick="copy('id--3282611635145004523')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="UMA TV">
                 <strong>UMA TV</strong>
-                <input type="text" value="https://umatv.nuvemplay.live/hls/stream.m3u8" id="url-1121581370376101756" readonly>
-                <button onclick="copy('url-1121581370376101756')">COPIAR URL</button>
+                <input type="text" value="https://umatv.nuvemplay.live/hls/stream.m3u8" id="id--6492244592562308756" class="url-input" readonly>
+                <button onclick="copy('id--6492244592562308756')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="UNISUL TV (720P)">
                 <strong>UNISUL TV (720P)</strong>
-                <input type="text" value="https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=" id="url-1607854552824991834" readonly>
-                <button onclick="copy('url-1607854552824991834')">COPIAR URL</button>
+                <input type="text" value="https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=" id="id--3644112770545837529" class="url-input" readonly>
+                <button onclick="copy('id--3644112770545837529')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="UNITV PORTO ALEGRE (480P)">
                 <strong>UNITV PORTO ALEGRE (480P)</strong>
-                <input type="text" value="http://unitvaovivo.ufrgs.br:8080/live.ogg" id="url-3612557249096216375" readonly>
-                <button onclick="copy('url-3612557249096216375')">COPIAR URL</button>
+                <input type="text" value="http://unitvaovivo.ufrgs.br:8080/live.ogg" id="id-1935067603555325501" class="url-input" readonly>
+                <button onclick="copy('id-1935067603555325501')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="VRT CHANNEL (720P)">
                 <strong>VRT CHANNEL (720P)</strong>
-                <input type="text" value="https://sistemavrt.vrtchannel.tv.br:3473/stream/play.m3u8" id="url--8979319238020546477" readonly>
-                <button onclick="copy('url--8979319238020546477')">COPIAR URL</button>
+                <input type="text" value="https://sistemavrt.vrtchannel.tv.br:3473/stream/play.m3u8" id="id--3351901336297029533" class="url-input" readonly>
+                <button onclick="copy('id--3351901336297029533')">COPIAR URL</button>
             </div>
         
-            <div class="card">
+            <div class="card" data-name="VV8 TV (720P)">
                 <strong>VV8 TV (720P)</strong>
-                <input type="text" value="https://video01.kshost.com.br/seap8272/seap8272/playlist.m3u8" id="url-2443927883962480219" readonly>
-                <button onclick="copy('url-2443927883962480219')">COPIAR URL</button>
+                <input type="text" value="https://video01.kshost.com.br/seap8272/seap8272/playlist.m3u8" id="id-6528343889495522560" class="url-input" readonly>
+                <button onclick="copy('id-6528343889495522560')">COPIAR URL</button>
             </div>
         
         </div>
         <script>
+            function filterChannels() {
+                let input = document.getElementById('searchBar').value.toUpperCase();
+                let grid = document.getElementById('channelGrid');
+                let cards = grid.getElementsByClassName('card');
+
+                for (let i = 0; i < cards.length; i++) {
+                    let name = cards[i].getAttribute('data-name');
+                    if (name.includes(input)) {
+                        cards[i].classList.remove('hidden');
+                    } else {
+                        cards[i].classList.add('hidden');
+                    }
+                }
+            }
+
             function copy(id) {
                 var btn = document.getElementById(id);
                 btn.select();
                 document.execCommand("copy");
-                alert("URL copiada!");
+                alert("URL copiada para o PHflix!");
             }
         </script>
     </body>
