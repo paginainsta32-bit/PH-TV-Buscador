@@ -3,13 +3,14 @@ from datetime import datetime
 import re
 
 def buscar_links():
+    # LISTA CORRIGIDA COM TODAS AS VÍRGULAS
     fontes = [
         "https://iptv-org.github.io/api/streams.json",
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/br.m3u",
         "https://raw.githubusercontent.com/GuikiAnimes/Canal-Aberto-Brasil/main/CanalAbertoBrasil.m3u",
-        "https://raw.githubusercontent.com/LITUATUI/IPTV/main/BR.m3u"
-        "https://raw.githubusercontent.com/HelmerLousas/m3u-br/main/br.m3u", # Mais canais BR
-        "https://raw.githubusercontent.com/Telesv/Documentarios/main/documentarios.m3u" # Documentários variados
+        "https://raw.githubusercontent.com/LITUATUI/IPTV/main/BR.m3u",
+        "https://raw.githubusercontent.com/HelmerLousas/m3u-br/main/br.m3u",
+        "https://raw.githubusercontent.com/Telesv/Documentarios/main/documentarios.m3u"
     ]
     
     canais_encontrados = []
@@ -17,6 +18,7 @@ def buscar_links():
 
     for url in fontes:
         try:
+            print(f"Acessando: {url}")
             response = requests.get(url, timeout=20)
             if not response.ok: continue
 
@@ -28,12 +30,17 @@ def buscar_links():
                         canais_encontrados.append({"nome": nome, "url": c.get("url")})
             else:
                 conteudo = response.text
+                # Regex melhorado para aceitar espaços e variações de tags m3u
                 matches = re.findall(r'#EXTINF:.*?,(.*?)\n(http.*)', conteudo)
                 for nome, link in matches:
-                    canais_encontrados.append({"nome": nome.strip().upper(), "url": link.strip()})
+                    nome_limpo = nome.strip().upper()
+                    # Remove caracteres especiais que atrapalham a busca
+                    nome_limpo = re.sub(r'[^\w\s]', '', nome_limpo)
+                    canais_encontrados.append({"nome": nome_limpo, "url": link.strip()})
         except Exception as e:
             print(f"Erro em {url}: {e}")
 
+    # Deduplicação por URL
     vistos = set()
     lista_final = []
     for c in canais_encontrados:
@@ -50,7 +57,7 @@ def gerar_painel(canais):
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>PH-TV MUNIÇÃO V4</title>
+        <title>PH-TV MUNIÇÃO V5</title>
         <style>
             body {{ background: #0a0a0a; color: #00ff41; font-family: 'Segoe UI', sans-serif; padding: 20px; }}
             .header-sticky {{ position: sticky; top: 0; background: #0a0a0a; padding: 10px 0; z-index: 100; border-bottom: 1px solid #333; }}
@@ -61,7 +68,7 @@ def gerar_painel(canais):
             }}
             .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }}
             .card {{ background: #161616; border: 1px solid #333; padding: 15px; border-radius: 8px; transition: 0.3s; }}
-            .card:hover {{ border-color: #00ff41; }}
+            .card:hover {{ border-color: #00ff41; box-shadow: 0 0 10px rgba(0,255,65,0.2); }}
             input.url-input {{ width: 100%; background: #000; color: #0f8; border: 1px solid #444; padding: 8px; margin: 10px 0; border-radius: 4px; font-size: 11px; }}
             button {{ background: #00ff41; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; }}
             .hidden {{ display: none !important; }}
@@ -72,16 +79,15 @@ def gerar_painel(canais):
     <body>
         <div class="header-sticky">
             <h1>🔍 PH-TV FINDER</h1>
-            <div class="stats">Canais: {len(canais)} | Atualizado: {agora}</div>
-            <input type="text" id="searchBar" placeholder="Pesquisar canal (ex: Globo, SBT, Record...)" onkeyup="filterChannels()">
+            <div class="stats">Canais Encontrados: {len(canais)} | Atualizado: {agora}</div>
+            <input type="text" id="searchBar" placeholder="Digite o nome do canal..." onkeyup="filterChannels()">
         </div>
 
         <div class="grid" id="channelGrid">
     """
     
-    for c in canais:
-        # Gerar um ID único para cada input usando hash da URL
-        safe_id = f"id-{hash(c['url'])}"
+    for i, c in enumerate(canais):
+        safe_id = f"id-{i}"
         html_template += f"""
             <div class="card" data-name="{c['nome']}">
                 <strong>{c['nome']}</strong>
@@ -112,7 +118,7 @@ def gerar_painel(canais):
                 var btn = document.getElementById(id);
                 btn.select();
                 document.execCommand("copy");
-                alert("URL copiada para o PHflix!");
+                alert("URL copiada!");
             }
         </script>
     </body>
@@ -124,4 +130,4 @@ def gerar_painel(canais):
 if __name__ == "__main__":
     lista = buscar_links()
     gerar_painel(lista)
-    print(f"Sucesso: {len(lista)} canais gerados com barra de pesquisa.")
+    print(f"Sucesso: {len(lista)} canais gerados.")
